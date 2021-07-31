@@ -1,0 +1,29 @@
+uuid: a93f7aee-9acc-421a-861e-07863d05bdb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gallery_images
+    - media.type.image
+    - node.type.image_gallery
+id: node.image_gallery.field_gallery_images
+field_name: field_gallery_images
+entity_type: node
+bundle: image_gallery
+label: 'Gallery Images'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

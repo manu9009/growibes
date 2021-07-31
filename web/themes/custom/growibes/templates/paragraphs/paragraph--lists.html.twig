@@ -1,0 +1,62 @@
+{% if view_mode == 'home' %}
+  <section class="section pillarsHome inner-content" data-scroll-section="" data-scroll-section-inview="">
+  {% endif %}
+  <div class="container">
+    {% if content.field_title.0 or content.field_lead_text.0 %}
+      <div class="researchCenterTitle g-padding-y2 p-content ">
+        <div class="row justify-content-between">
+          {% if content.field_title %}
+
+            {% if view_mode == 'home' %}
+              <div class="col-md-6">
+            {% else %}
+              <div class="col-md-3">
+            {% endif %}
+              <div class="text-content">
+              {% if view_mode == 'home' %}
+                {% if language.getId() == 'ar' or language == 'ar' %}
+                  <span class="h2 fw-bold title fc-black text-a scroll" data-scroll=""> {{ content.field_title }} </span>
+                {% else %}
+                   <span data-splitting="" class="h2 fw-bold title fc-black text-a scroll words chars splitting is-inview" data-scroll="" style="--word-total:2; --char-total:10;"> {{ content.field_title }} </span>
+
+                {% endif %}
+              {% else %}
+                <span class="d-block h4 fw-bold name mb-3">{{ content.field_title }} </span>
+              {% endif %}
+              </div>
+            </div>
+          {% endif %}
+          {% if content.field_lead_text.0 %}
+            {% if view_mode == 'home' %}
+              <div class="col-md-6">
+            {% else %}
+              <div class="col-md-8">
+            {% endif %}
+              <article>
+                {{ content.field_lead_text.0 }}
+              </article>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% if content.field_card %}
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="textImageBlockBox">
+            <div class="row align-items-start">
+              {{ content.field_card  }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  <div class="graphic speed-block" data-scroll data-scroll-speed="2" data-scroll-position="top">
+    <figure class="mb-0 image" data-scroll>
+      <img data-src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" src="{{ theme_path }}/images/dotted_circle.svg" alt="ATRC" class="lazyload">
+    </figure>
+  </div>
+  {% if view_mode == 'home' %}
+  </section>
+{% endif %}

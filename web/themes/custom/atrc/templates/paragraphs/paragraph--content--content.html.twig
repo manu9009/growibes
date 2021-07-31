@@ -1,0 +1,150 @@
+{% if content.field_column[0]['#markup'] == 'one-column' %}
+  <div class="container">
+    <div class="organizational border-bottom">
+      <div class="row">
+       {% if content.field_title.0 or content.field_leadtext.0 %}
+          <div class="col-md-9">
+            <div class="text-content  g-padding-y  mb-3 mb-lg-3">
+              <small class="d-block h5 fc-gray fw-bold name mb-2">{{ content.field_leadtext.0 }}</small>
+              <span class="title h2 fw-bold">
+                {{ content.field_title.0 }}
+              </span>
+            </div>
+          </div>
+        {% endif %}
+        <div class="col-md-12 {{ content.field_title.0 ? '' : 'pt-5' }}">
+          {{ content.field_content.0 }}
+          {% if content.field_link.0['#url'] %}
+            <a class="btn linked" href="{{ content.field_link.0['#url'] }}"><span>{{ content.field_link.0["#title"] }}</span><i><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></i></a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% elseif content.field_column[0]['#markup'] == 'two-column' %}
+  <div class="container">
+    <div class="goal g-padding-y border-bottom">
+      <div class="row">
+        <div class="col-md-6">
+          {% if content.field_image.0 %}
+            {% set image = paragraph.field_image.entity.field_media_image.entity.fileuri|image_style('about_us') %}
+            <figure class="bg-silver">
+              <img data-expand="-100" data-src="{{ image }}" src="{{ image }}" alt="Purpose" class="w-100 lazyloaded">
+            </figure>
+          {% endif %}
+        </div>
+        <div class="col-md-6 col-lg-5">
+        {% if content.field_title.0 %}
+        <span class="h2 mb-4 fw-bold fc-black pt-4">
+        {{ content.field_title.0 }}
+        </span>
+        {% endif %}
+          <div class="text-content  mb-3 mb-lg-5">
+          <span class="d-block h5 fw-bold">{{ content.field_leadtext.0 }}</span>
+            <article class="mt-3">
+              {{ content.field_content.0 }}
+              {% if content.field_link.0['#url'] %}
+                <a class="btn linked" href="{{ content.field_link.0['#url'] }}"><span>{{ content.field_link.0["#title"] }}</span><i><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></i></a>
+              {% endif %}
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% elseif content.field_column[0]['#markup'] == 'timeline-column' %}
+  <div class="container">
+    <div class="message g-padding-y border-bottom">
+      <div class="row justify-content-between">
+        <div class="col-md-5">
+          {% if content.field_image.0 %}
+            {% set image = paragraph.field_image.entity.field_media_image.entity.fileuri|image_style('large') %}
+
+            <figure class="img-brand mb-4">
+              <img data-src="{{ image }}" src="{{ image }}" alt="Purpose" class="w-100 lazyloaded">
+            </figure>
+          {% endif %}
+        </div>
+        <div class="col-md-7">
+          <div class="text-content pl-md-5 ml-lg-5 px-lg-5 mb-3 mb-lg-5">
+            <span class="d-block h5 fw-bold mb-4">{{ content.field_leadtext.0 }}</span>
+            {{ content.field_content.0 }}
+            {% if content.field_link.0['#url'] %}
+              <a class="btn linked" href="{{ content.field_link.0['#url'] }}"><span>{{ content.field_link.0["#title"] }}</span><i><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></i></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% elseif content.field_column[0]['#markup'] == 'about-column' %}
+  <div class="container">
+    <div class="boards pt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-4 col-lg-3">
+          {% if content.field_image.0 %}
+           {% set image = paragraph.field_image.entity.field_media_image.entity.fileuri|image_style('large') %}
+            <figure class="img-brand mb-4">
+              <img data-src="{{ image }}" src="{{ image }}" alt="Purpose" class="w-100 lazyloaded">
+            </figure>
+          {% endif %}
+        </div>
+        <div class="col-lg-7 col-md-8">
+          <div class="text-content pl-md-5 ml-lg-5 px-lg-5">
+            <span class="d-block h4 fw-bold name mb-3">{{ content.field_title.0 }}</span>
+            <span class="d-block h5 fc-gray fw-bold designation">{{ content.field_leadtext.0 }}</span>
+            <article class="mt-3">
+              {{ content.field_content.0 }}
+              {% if content.field_link.0['#url'] %}
+                <a class="btn linked" href="{{ content.field_link.0['#url'] }}"><span>{{ content.field_link.0["#title"] }}</span><i><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></i></a>
+              {% endif %}
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+{% if view_mode == 'home' %}
+  <section class="section inner-content" data-scroll-section>
+{% endif %}
+  <div class="container ">
+    {% if view_mode == 'home' %}
+      <div class="programManagement g-padding-y2 p-content ">
+    {% else %}
+      <div class="programManagement g-padding-y p-content ">
+    {% endif %}
+    <div class="row justify-content-between">
+      <div class="col-md-6">
+        <div class="text-content">
+          <span class="d-block h2 fw-bold name mb-3">{{ content.field_title }}</span>
+          {% if content.field_leadtext %}
+            <span class="d-block h5 fw-bold">{{ content.field_leadtext }}</span>
+          {% endif%}
+        </div>
+      </div>
+      <div class="col-md-6">
+        {% if content.field_image.0 %}
+          <figure>
+            <figure class="bg-silver">
+              <img data-expand="-100" data-src="{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}" src="{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}" alt="Aspire" class="w-100 lazyloaded">
+            </figure>
+          </figure>
+        {% endif %}
+        <article>
+          {{ content.field_content.0 }}
+
+          {% if "On" in content.field_link_style.0 %}
+          <a class="contentLink d-flex align-items-center justify-content-between " href="{{ content.field_link.0['#url'] }}"> <span>{{ content.field_link.0["#title"] }}</span> <i><svg class="icon-svg arrow-topRight"><use xlink:href="#arrow-topRight"></use></svg></i> </a>
+          {% elseif content.field_link.0['#url'] %}
+          <a class="btn linked" href="{{ content.field_link.0['#url'] }}"><span>{{ content.field_link.0["#title"] }}</span><i><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></i></a>
+          {% endif %}
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% if view_mode == 'home' %}
+  </section>
+{% endif %}
+{% endif %}

@@ -1,0 +1,69 @@
+uuid: 646a6fee-c872-43ee-8600-5d3f397784db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.embed_view.field_content
+    - field.field.paragraph.embed_view.field_link
+    - field.field.paragraph.embed_view.field_title
+    - field.field.paragraph.embed_view.field_view
+    - field.field.paragraph.embed_view.paragraph_view_mode
+    - paragraphs.paragraphs_type.embed_view
+  module:
+    - link
+    - paragraph_view_mode
+    - text
+    - viewsreference
+id: paragraph.embed_view.default
+targetEntityType: paragraph
+bundle: embed_view
+mode: default
+content:
+  field_content:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_view:
+    weight: 2
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: 0
+        page: 0
+        feed: 0
+        embed: 0
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

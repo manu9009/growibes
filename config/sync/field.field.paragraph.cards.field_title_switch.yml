@@ -1,0 +1,23 @@
+uuid: eb9b038e-39b2-406b-ad08-c4949487e6f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_switch
+    - paragraphs.paragraphs_type.cards
+id: paragraph.cards.field_title_switch
+field_name: field_title_switch
+entity_type: paragraph
+bundle: cards
+label: 'Title switch'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

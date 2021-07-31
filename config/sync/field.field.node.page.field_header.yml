@@ -1,0 +1,59 @@
+uuid: fc669570-29fa-4e68-82e7-9056a19f5d8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header
+    - node.type.page
+    - paragraphs.paragraphs_type.embed_view
+    - paragraphs.paragraphs_type.image_background
+    - paragraphs.paragraphs_type.video_background
+  module:
+    - entity_reference_revisions
+id: node.page.field_header
+field_name: field_header
+entity_type: node
+bundle: page
+label: Header
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image_background: image_background
+      video_background: video_background
+      embed_view: embed_view
+    target_bundles_drag_drop:
+      card:
+        weight: -17
+        enabled: false
+      cards:
+        weight: -16
+        enabled: false
+      content:
+        weight: -15
+        enabled: false
+      embed_view:
+        enabled: true
+        weight: 13
+      image_background:
+        enabled: true
+        weight: -11
+      list:
+        weight: -14
+        enabled: false
+      lists:
+        weight: -13
+        enabled: false
+      text_circle_images:
+        weight: -12
+        enabled: false
+      video_background:
+        enabled: true
+        weight: -10
+field_type: entity_reference_revisions

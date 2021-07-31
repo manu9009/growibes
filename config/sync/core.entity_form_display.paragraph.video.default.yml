@@ -1,0 +1,31 @@
+uuid: cd39dc38-3ed1-4acd-8b00-5896c9149656
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video.field_video_upload
+    - paragraphs.paragraphs_type.video
+  module:
+    - field_layout
+    - layout_discovery
+    - media_library
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.video.default
+targetEntityType: paragraph
+bundle: video
+mode: default
+content:
+  field_video_upload:
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+hidden:
+  created: true
+  status: true

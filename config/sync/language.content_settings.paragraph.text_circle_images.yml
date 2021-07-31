@@ -1,0 +1,18 @@
+uuid: e4e38536-d4b6-41a6-a127-b1b265af83b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.text_circle_images
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.text_circle_images
+target_entity_type_id: paragraph
+target_bundle: text_circle_images
+default_langcode: site_default
+language_alterable: true

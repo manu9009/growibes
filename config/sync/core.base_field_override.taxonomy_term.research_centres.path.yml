@@ -1,0 +1,20 @@
+uuid: 476ba548-fb1d-4cd2-afe5-8c3d8e8c6770
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.research_centres
+  module:
+    - path
+id: taxonomy_term.research_centres.path
+field_name: path
+entity_type: taxonomy_term
+bundle: research_centres
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

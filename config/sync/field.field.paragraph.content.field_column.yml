@@ -1,0 +1,21 @@
+uuid: 8b3b32b1-7640-4bdc-9cff-c4919cbeb435
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column
+    - paragraphs.paragraphs_type.content
+  module:
+    - options
+id: paragraph.content.field_column
+field_name: field_column
+entity_type: paragraph
+bundle: content
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

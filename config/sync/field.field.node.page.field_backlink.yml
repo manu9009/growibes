@@ -1,0 +1,23 @@
+uuid: 2615644a-a2de-43da-9f55-b01cd8d6a96f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_backlink
+    - node.type.page
+  module:
+    - link
+id: node.page.field_backlink
+field_name: field_backlink
+entity_type: node
+bundle: page
+label: Backlink
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

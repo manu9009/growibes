@@ -1,0 +1,53 @@
+<section class=" section banner video-banner" data-scroll-section>
+    <div class="container  h-100">
+        <div class="bannerContent h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-12 d-flex flex-wrap align-items-end">
+                    <div class="col-md-8 p-0">
+                        <div data-scroll data-scroll-speed="3" data-scroll-position="top">
+                            {% if language.getId() == 'ar' or language == 'ar' %}
+                               <span class="banner-title-line">
+                                   <span class="title  fw-bold" style="color: #fff !important;">
+                                       {{ content.field_caption.0 }}
+                                   </span>
+                               </span>
+                            {% else %}
+                              <span class="banner-title-line" data-splitting >
+                                  <span class="title  fw-bold" style="color: #fff !important;">
+                                      {{ content.field_caption.0 }}
+                                  </span>
+                              </span>
+                            {% endif %}
+
+                            {% if content.field_slogan.0  %}
+                              <span class="d-block h5 fw-medium slogan"  data-scroll="" data-scroll-position="top"  fzdata-scroll-speed="2" style="color: #fff !important;">
+                                  {{ content.field_slogan.0 }}
+                              </span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {% if content.field_link.0['#url'] %}
+                      <div class="col-12 p-0">
+                          <div class="btn-group d-flex" data-scroll="" data-scroll-position="top"  data-scroll-speed="2">
+                              <a href="{{content.field_link.0['#url'] }}" class="btn linked-inversed">
+                                  <span>{{ content.field_link.0['#title'] }}</span><i><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></i>
+                              </a>
+                          </div>
+                      </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="graphic speed-block" data-scroll data-scroll-speed="-4" data-scroll-position="top" >
+      <figure class="mb-0 image"  data-scroll>
+        <img data-src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" alt="ATRC" class="lazyload" />
+      </figure>
+    </div>
+
+    <div class="vimeo-container" data-scroll="" data-scroll-speed="-1.5">
+      {{ content.field_video_upload.0 }}
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<article {{ attributes.addclass }}>
+  <div class="card">
+    {% if content.field_image or content.field_events_image %}
+      <div class="card--img">
+        {% if content.field_events_image %}
+          {{ content.field_events_image|raw }}
+        {% elseif content.field_image %}
+          {{ content.field_image }}
+        {% elseif content.field_gallery_image %}
+          {{ content.field_gallery_image['#items'].0 }}
+        {% elseif content.field_video_gallery %}
+          {{ content.field_video_gallery['#items'].0 }}
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="card-body">
+      {% if content.title_teaser and content.title_teaser|striptags|trim|length > 0 %}
+        {% set label = content.title_teaser|striptags|trim %}
+      {% endif %}
+      <h3 class="card-title"><a href="{{ url }}">{{ label|length > 170 ? label|slice(0, 170) ~ '...' : label }}</a></h3>
+      {{ content|without('field_image', 'field_events_image', 'field_gallery_image', 'field_video_gallery') }}
+    </div>
+  </div>
+</article>

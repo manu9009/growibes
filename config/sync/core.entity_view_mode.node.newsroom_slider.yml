@@ -1,0 +1,10 @@
+uuid: 0365c70a-8d94-4f3c-a1d4-acd638ab9fc0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.newsroom_slider
+label: Slider
+targetEntityType: node
+cache: true

@@ -1,0 +1,19 @@
+uuid: 8ff3b809-39d9-41ba-abf2-625260323aa1
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      page: page
+  paragraph_view_mode:
+    enabled: false
+id: slider
+label: Slider
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

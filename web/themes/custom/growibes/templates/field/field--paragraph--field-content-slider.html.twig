@@ -1,0 +1,13 @@
+<div class="swiper-container focusesSlider">
+  <div class="swiper-wrapper">
+    {% for item in items %}
+      <div class="swiper-slide square focusesLists  bg-silver {{ loop.first ? 'swiper-slide-active' : '' }}">
+          <div class="sliderContent content focusesContent h-100 d-flex flex-column">
+            {{ item.content  }}
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+

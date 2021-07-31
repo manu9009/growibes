@@ -1,0 +1,20 @@
+uuid: 8c60a0f0-538f-4903-8850-0456ee15eca0
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraph_view_mode:
+    label: 'View Mode'
+    enabled: true
+  paragraphs_ee:
+    paragraphs_categories:
+      page: page
+id: content
+label: Content
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

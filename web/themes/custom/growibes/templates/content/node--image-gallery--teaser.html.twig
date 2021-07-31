@@ -1,0 +1,22 @@
+<div class="itemMedia bg-white m-0" data-scroll="">
+    <div class="img_wrapper">
+         {% for image in node.field_gallery_images %}
+          {% if loop.index == 1 %}
+              <figure class="bg-silver mb-0">
+                {% set image = image.entity.field_media_image.entity.fileuri|image_style('media') %}
+
+                <img data-src="{{ image }}" src="{{ image }}" data-expand="-100" alt="" class="w-100 lazyloaded">
+            </figure>
+          {% endif %}
+        {% endfor %}
+
+    </div>
+    <div class="content  d-flex flex-wrap flex-column">
+        <small class="d-block mb-3 fw-medium fc-gray">Image</small>
+        <a href="{{ url }}" class="h5 d-block fw-bold mb-5 t-link-dark">
+            {# { label.0 } #}
+            {{ label|length > 40 ? label| slice(0, 40) ~ '...' : label }}
+        </a>
+        <small class="type fc-gray mt-auto">{{ content.field_category.0 }}</small>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+uuid: 32bd093b-e56f-4f4e-84fa-2c3cbf8ff5bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Video Gallery'
+type: video
+description: 'ATRC Video Gallery'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,23 @@
+uuid: 308386e9-ca90-4d82-af35-be05cad93922
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_switch
+    - paragraphs.paragraphs_type.card
+id: paragraph.card.field_title_switch
+field_name: field_title_switch
+entity_type: paragraph
+bundle: card
+label: 'Enable Link'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

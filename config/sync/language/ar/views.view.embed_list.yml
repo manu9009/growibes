@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      empty:
+        area:
+          content:
+            value: "<div class=\"container text-center g-padding-y \">\r\n<h4>No results found</h4>\r\n</div>\r\n"
+            format: full_html
+  all_news:
+    display_options:
+      pager:
+        options:
+          views_infinite_scroll:
+            button_text: 'اقرأ المزيد'
+      exposed_form:
+        options:
+          sort_asc_label: الأقدم
+          sort_desc_label: الأحدث

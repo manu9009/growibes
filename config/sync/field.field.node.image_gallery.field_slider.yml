@@ -1,0 +1,23 @@
+uuid: a7f9f396-8838-4c46-81e8-7e1758228633
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slider
+    - node.type.image_gallery
+id: node.image_gallery.field_slider
+field_name: field_slider
+entity_type: node
+bundle: image_gallery
+label: 'News Slider'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

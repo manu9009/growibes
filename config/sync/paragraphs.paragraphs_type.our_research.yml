@@ -1,0 +1,19 @@
+uuid: 433982ab-7f9a-4520-ad39-add168267d21
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      page: page
+  paragraph_view_mode:
+    enabled: false
+id: our_research
+label: 'Our Research'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,16 @@
+<div class=" textImageBlock">
+  {% if paragraph.field_image.entity.field_media_image.entity.fileuri %}
+    {% set image = paragraph.field_image.entity.field_media_image.entity.fileuri|image_style('about_us') %}
+    <figure class="bg-silver">
+      <img data-expand="-100" data-src="{{ image }}" src="{{ image }}" alt="Purpose" class="w-100 lazyloaded blur-up ">
+    </figure>
+  {% endif %}
+  <span class="h4 fw-bold mb-3 d-block">{{ content.field_title.0 }}</span>
+  {{ content.field_content.0 }}
+  {{content.field_link }}
+</div>
+<div style="display: none">
+  <svg id="arrow-right" viewBox="0 0 48 48">
+  <path class="arrow-right" d="M24,8l-2.8,2.8L32.3,22H8v4h24.3L21.2,37.2L24,40l16-16L24,8z"></path>
+</svg>
+</div>

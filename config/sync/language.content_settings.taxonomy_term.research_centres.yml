@@ -1,0 +1,18 @@
+uuid: 4a1b97b9-2d0f-42d6-b9d9-977e05d14e8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.research_centres
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.research_centres
+target_entity_type_id: taxonomy_term
+target_bundle: research_centres
+default_langcode: site_default
+language_alterable: true

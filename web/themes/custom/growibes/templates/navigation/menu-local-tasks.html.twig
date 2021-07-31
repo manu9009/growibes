@@ -1,0 +1,15 @@
+{%
+  set classes = [
+    primary ? 'primary d-flex flex-column flex-lg-row justify-content-center text-align-center justify-content-lg-end',
+    secondary ? 'secondary',
+  ]
+%}
+
+{% if primary %}
+  <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
+  <ul{{ attributes.addClass(classes) }}>{{ primary }}</ul>
+{% endif %}
+{% if secondary %}
+  <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
+  <ul{{ attributes.addClass(classes) }}>{{ secondary }}</ul>
+{% endif %}

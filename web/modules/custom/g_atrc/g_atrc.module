@@ -1,0 +1,171 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Render\Markup;
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function g_atrc_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $view = $form_state->getStorage('view');
+  if (($view['view']->id() == 'embed_list') && ($view['view']->current_display == 'all_events') && $form_id == 'views_exposed_form') {
+    if (isset($form['#id']) && $form['#id'] == 'views-exposed-form-embed-list-all-events') {
+    $form['sort_by']['#prefix'] = '<div class="selectric-hide-select">';
+    $form['sort_by']['#suffix'] = '</div>';
+
+      $form['e_month']['#weight'] = 0;
+      $form['e_year']['#weight'] = 1;
+      $form['e_category']['#weight'] = 2;
+      $form['e_combine']['#weight'] = 3;
+      $form['actions']['#weight'] = 4; 
+      $form['sort_order']['#weight'] = 5;
+      $form['e_month']['#options']['All'] = t('Select Month');
+      $form['e_year']['#options']['All'] = t('Select Year');
+      $form['e_category']['#options']['All'] = t('Select Research Centre');
+      $form['actions']['submit']['#attributes']['class'] = ['btn','formBtn','d-flex','align-items-center','justify-content-between']; 
+
+      $form['e_month']['#prefix'] = '<div class="selects"><div class="container"><div class="row justify-content-between align-items-stretch stickyWrap selectWrap"><div class="selectMonth selectItem col-6 col-md-2 d-flex align-items-center">';
+      $form['e_month']['#suffix'] = '</div>';
+      $form['e_year']['#prefix'] = '<div class="selectYear selectItem col-6 col-md-2 d-flex align-items-center">';
+      $form['e_year']['#suffix'] = '</div>';
+      $form['e_category']['#prefix'] = '<div class="selectCentre selectItem col-12 col-md-3 d-flex align-items-center">';
+      $form['e_category']['#suffix'] = '</div>';
+      $form['e_combine']['#prefix'] = '<div class="searchInput selectItem col-12 col-md-3 d-flex align-items-center">';
+      $form['e_combine']['#suffix'] = '</div>';
+      $form['actions']['#suffix'] = '</div></div></div>';
+      $form['sort_order']['#title'] = '';
+      $form['sort_order']['#prefix'] = Markup::create("<div class='links'><div class='container'><div class='d-flex justify-content-between align-items-center stickyWrap'><div class='btn-group'><a class='btn linked-black reversed' href='/newsroom'><span>Newsroom</span><i><svg class='icon-svg arrow-left'><use xlink:href='#arrow-left'></use></svg></i></a></div><div class='selectric-wrapper selectric-selectric selectric-dropdownSelect'>");
+      $form['sort_order']['#suffix'] = '</div></div></div></div>';
+    }
+  }
+  if (($view['view']->id() == 'embed_list') && ($view['view']->current_display == 'all_news')  && $form_id == 'views_exposed_form') {
+    $form['sort_by']['#prefix'] = '<div class="selectric-hide-select">';
+    $form['sort_by']['#suffix'] = '</div>';
+  }
+  if (($view['view']->id() == 'embed_list') && ($view['view']->current_display == 'all_media')  && $form_id == 'views_exposed_form') {
+    $form['type']['#options']['All'] = t('All');
+  }
+
+}
+
+function _atrc_form_add_wrapper(&$element, $classes = array(), $type = array('form-item', 'form-type-textfield'), $removeTitle = FALSE){
+  $element['#prefix'] = '<div class="' . implode(" ", $classes) . '"><div class="' . implode(" ", $type) . '">';
+  $element['#suffix'] = '</div></div>';
+}
+
+/**
+ * Implements HOOK_form_alter().
+ */
+function g_atrc_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if (strpos($form_id, 'node_page_edit_form') === 0) {
+    $form['field_backlink']['widget'][0]['#states'] = [
+      'visible' => [
+        ':input[name="field_show_backlink[value]"]' => ['checked' => TRUE],
+      ],
+    ];
+  }
+
+  // View mode for Home page 
+  $form['field_view_mode']['widget'][0]['#prefix'] = '<div class="visually-hidden">';
+  $form['field_view_mode']['widget'][0]['#suffix'] = '</div>';  
+  if (isset($form['promote']['widget']['value']['#default_value']) && $form['promote']['widget']['value']['#default_value']) {
+    $form['field_view_mode']['widget'][0]['value']['#default_value'] = 'home';
+  }else{
+    $form['field_view_mode']['widget'][0]['value']['#default_value'] = 'default';
+  }
+
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function g_atrc_entity_type_alter(array &$entity_types) {
+  foreach ($entity_types as $entity_type) {
+    $constraints = $entity_type->getConstraints();
+    unset($constraints['EntityUntranslatableFields']);
+    $entity_type->setConstraints($constraints);
+  }
+}
+
+/**
+ * Implements hook_form_paragraphs_subform_alter().
+ * Perform alterations on a paragraphs entity subform.
+ */
+function g_atrc_form_paragraphs_subform_alter(array &$subform, FormStateInterface $form_state, $delta) {
+  
+  $paragraph = $form_state->get('paragraph');
+  $paragraph_type = $paragraph->getType();
+ 
+  if($paragraph_type == 'content') {
+    $subform['paragraph_view_mode']['widget'][0]['#prefix'] = '<div class="visually-hidden">';
+    $subform['paragraph_view_mode']['widget'][0]['#suffix'] = '</div>';
+
+    if($subform['paragraph_view_mode']['widget']['#parents'][0] == "field_footer") { 
+    $subform['field_image']['widget']['#required']=TRUE;
+    $subform['field_image']['widget']['#title']='Background Image';
+    $subform['field_column']['widget']['#prefix'] = '<div class="visually-hidden">';
+    $subform['field_column']['widget']['#suffix'] = '</div>';
+    $subform['field_link_style']['widget']['#prefix'] = '<div class="visually-hidden">';
+    $subform['field_link_style']['widget']['#suffix'] = '</div>';
+
+      $subform['paragraph_view_mode']['widget'][0]['value']['#default_value'] = 'footer';
+
+
+    }  else if($subform['paragraph_view_mode']['widget']['#parents'][0] == "field_content") {
+      $subform['paragraph_view_mode']['widget'][0]['value']['#default_value'] = 'content';
+    }
+  }
+
+}
+
+/**
+* Implements hook_preprocess_node() for node (content) templates.
+*/
+function g_atrc_preprocess_node(&$variables) {
+
+  // Region in templates 
+  $allowed_view_modes = ['full'];
+  $view_mode = $variables['view_mode'];
+  if (in_array($view_mode, $allowed_view_modes)) {
+    $allowed_regions = ['title','breadcrumb','tabs','highlighted'];
+    add_regions_to_node($allowed_regions, $variables);
+  }
+
+}
+
+/**
+* Add given regions to node content variables used in preprocessers/templates.
+*/
+function add_regions_to_node($allowed_regions, &$variables) {
+ 
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $available_regions = system_region_list($theme, 'REGIONS_ALL');
+  $regions = array_intersect(array_keys($available_regions), $allowed_regions);
+
+  foreach ($regions as $region) {
+    $blocks = \Drupal::entityTypeManager()
+      ->getStorage('block')
+      ->loadByProperties(array('theme' => $theme, 'region' => $region));
+
+    uasort($blocks, 'Drupal\block\Entity\Block::sort');
+
+    $build = array();
+    foreach ($blocks as $key => $block) {
+      if ($block->access('view')) {
+        $block = Block::load($key);
+        $block_content = \Drupal::entityTypeManager()
+          ->getViewBuilder('block')
+          ->view($block);
+        $build[$key] = $block_content;
+      }
+    }
+
+    $variables[$region] = $build;
+  }
+}

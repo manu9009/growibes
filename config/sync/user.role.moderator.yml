@@ -1,0 +1,9 @@
+uuid: 84b36360-226a-442c-9c72-139949e1c784
+langcode: en
+status: true
+dependencies: {  }
+id: moderator
+label: Moderator
+weight: -6
+is_admin: null
+permissions: {  }

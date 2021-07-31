@@ -1,0 +1,33 @@
+uuid: 03f446b1-502b-42cf-b313-c2cc47b10ebb
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_column
+field_name: field_column
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: one-column
+      label: 'One Column (100)'
+    -
+      value: two-column
+      label: 'Two Column (50/50)'
+    -
+      value: timeline-column
+      label: 'Timeline Column (60/40)'
+    -
+      value: about-column
+      label: 'About Column (30/70)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

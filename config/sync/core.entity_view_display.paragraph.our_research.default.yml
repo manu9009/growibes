@@ -1,0 +1,24 @@
+uuid: 92528cff-a628-4fcb-b48a-5bb17e3bb9f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_research.field_content_our_research
+    - paragraphs.paragraphs_type.our_research
+  module:
+    - entity_reference_revisions
+id: paragraph.our_research.default
+targetEntityType: paragraph
+bundle: our_research
+mode: default
+content:
+  field_content_our_research:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

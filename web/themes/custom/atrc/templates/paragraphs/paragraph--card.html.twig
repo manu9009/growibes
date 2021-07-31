@@ -1,0 +1,42 @@
+{% extends "paragraph.html.twig" %}
+{% block content %}
+  {% set paragraph_parent = paragraph.getParentEntity() %}
+  {% set backgroundValue = paragraph_parent.field_background.0.value %}
+  {% set colorClass = "fc-purple" %}
+  {% if '1' in backgroundValue %}
+    {% set colorClass = "fc-black" %}
+  {% endif %}
+
+  {% if '1' in backgroundValue %}
+    {% set colorClass = "fc-black" %}
+  {% endif %}
+  {% set has_linked = 'bg-white '%}
+  {% if 'On' in content.field_title_switch[0] %}
+    {% set has_linked = 'has-linked '%}
+  {% endif %}
+
+  <div class="contentBlock scroll {{ has_linked }}">
+    {% if content.field_icon  %}
+      {% if 'Off' in content.field_title_switch[0] %}
+       <div class="mb-3 mb-md-5">
+        {{ content.field_icon[0] }}
+        </div>
+      {% endif %}
+    {% endif %}
+    {% if content.field_title|render|striptags|trim %}
+      {% if 'On' in content.field_title_switch[0] %}
+        <span class="h4 d-block fw-bold  title ">{{ content.field_title }}</span>
+      {% else %}
+        <span class="h3 d-block {{ colorClass }}  mb-3">{{ content.field_title }}</span>
+      {% endif %}
+    {% endif %}
+    {% if 'On' in content.field_title_switch[0] %}
+       <span class="h4 d-block fw-bold fc-white mb-3">{{ content|without('field_title', 'field_icon', 'field_link', 'field_title_switch') }}</span>
+    {% else %}
+        <div class="h5 d-block {{ colorClass }} mb-3">{{ content|without('field_title', 'field_icon', 'field_link', 'field_title_switch') }}</div>
+    {% endif %}
+    {% if content.field_link.0['#url'] and 'On' in content.field_title_switch[0] %}
+      <a href="{{ content.field_link.0['#url'] }}"><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></a>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,72 @@
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@mixin sm {
+    @media (min-width: #{$sm}) {
+        @content;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+
+@mixin md {
+    @media (min-width: #{$md}) {
+        @content;
+    }
+}
+
+/*  Large devices (desktops, 992px and up) */
+@mixin lg {
+    @media (min-width: #{$lg}) {
+        @content;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@mixin xl {
+    @media (min-width: #{$xl}) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media (min-width: #{$xxl}) {
+        @content;
+    }
+}
+
+
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
+}
+
+// Rotate
+@mixin rotate ($deg) { 
+	@include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+// Translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+// Skew
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// Transform Origin
+@mixin transform-origin ($origin) {
+    	-webkit-transform-origin: $origin;
+    	-moz-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	transform-origin: $origin;
+}

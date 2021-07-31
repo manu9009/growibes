@@ -1,0 +1,19 @@
+uuid: 2f40d98d-e3d0-4b67-a8ba-71dd9efb982c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
+name: News
+type: article
+description: 'ATRC News'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

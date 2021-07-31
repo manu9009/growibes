@@ -1,0 +1,29 @@
+title: ' اتصل بنا'
+elements: |
+  processed_text:
+    '#text': "<p><span>قم بزيارتنا </span> <span> مجلس أبحاث التكنولوجيا المتطورة </span> <span> ص.ب: 9639،<br />\r\nمدينة مصدر<br />\r\nأبوظبي، الإمارات العربية المتحدة</span></p>\r\n"
+  processed_text_01:
+    '#text': "<p><span>سنقوم بالرد عليكم </span></p>\r\n"
+  name:
+    '#title': ' الاسم الكامل'
+    '#placeholder': ' الاسم الكامل'
+  email:
+    '#title': ' عنوان البريد الإلكتروني'
+    '#placeholder': ' عنوان البريد الإلكتروني'
+  message:
+    '#title': الرسالة
+    '#placeholder': الرسالة
+  actions:
+    '#submit__label': أرسل
+settings:
+  confirmation_message: "<h5 class=\"fw-bold h5 d-block fc-black\">Message sent!</h5>\r\nThank you for contacting ATRC.<br />\r\nWe will get in touch with you shortly."
+  confirmation_url: /contact
+handlers:
+  email_confirmation:
+    settings:
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'
+  email_notification:
+    settings:
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'

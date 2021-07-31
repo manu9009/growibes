@@ -1,0 +1,15 @@
+uuid: cdda3eb4-462a-44d4-a4bb-acccc5fd17a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories: {  }
+id: member
+label: Member
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

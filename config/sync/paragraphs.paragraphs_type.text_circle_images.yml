@@ -1,0 +1,19 @@
+uuid: 833b20c0-7633-4d7a-ba5a-d858d0b4c907
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      page: page
+  paragraph_view_mode:
+    enabled: false
+id: text_circle_images
+label: 'Text + Circle Images'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

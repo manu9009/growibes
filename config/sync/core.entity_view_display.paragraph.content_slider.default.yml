@@ -1,0 +1,31 @@
+uuid: 72d696f6-3a6b-400a-b12b-afd14f324a3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_slider.field_svg
+    - field.field.paragraph.content_slider.field_title
+    - paragraphs.paragraphs_type.content_slider
+id: paragraph.content_slider.default
+targetEntityType: paragraph
+bundle: content_slider
+mode: default
+content:
+  field_svg:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

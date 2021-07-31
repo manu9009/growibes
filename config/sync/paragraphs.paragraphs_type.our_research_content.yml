@@ -1,0 +1,18 @@
+uuid: 2c1c3193-9e6a-4702-b945-287041652bba
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories: {  }
+  paragraph_view_mode:
+    enabled: false
+id: our_research_content
+label: 'Our Research Content'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

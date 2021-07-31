@@ -1,0 +1,17 @@
+uuid: bfd8c854-3d72-4763-ad82-bb49c3054969
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Image Gallery'
+type: image_gallery
+description: 'ATRC Image Gallery'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

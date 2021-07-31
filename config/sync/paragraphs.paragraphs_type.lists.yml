@@ -1,0 +1,19 @@
+uuid: 0fdeaedc-16b8-40df-b0c9-56f6a39e6ef7
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      page: page
+  paragraph_view_mode:
+    enabled: false
+id: lists
+label: Lists
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

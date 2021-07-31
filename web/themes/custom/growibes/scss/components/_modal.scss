@@ -1,0 +1,76 @@
+.modalBox{
+   
+    .modal-dialog{
+        max-width: 100%;
+        
+
+        .modal-content{
+            border:0px;
+            border-radius: 0px;
+            padding: 30px;
+            position: relative;
+
+            @include lg{
+                padding: 40px
+            }
+
+            .close{
+                position: absolute;
+                opacity: 1;
+                right:30px;
+                top:30px;
+                transition: all .5s $powereaseOut;
+
+                @include lg{
+                    right:40px;
+                    top:40px;
+                }
+
+                &:hover{
+                    opacity: .75;
+
+                    span{
+                        &:after{
+                            width: 20px;
+                        }
+                    }
+                }
+
+                span{
+                    position: relative;
+                    font-size: 16px;
+                    letter-spacing: -.02em;
+                    display: block;
+
+                    &:after{
+                        position: relative;
+                        display: inline-block;
+                        content: "";
+                        width: 30px;
+                        height: 1px;
+                        background-color: $Woodsmoke;
+                        vertical-align: middle;
+                        margin:auto 20px;
+                        transition: all .5s $powereaseOut;
+                    }
+                }
+
+                i{
+                    
+
+                    svg{
+                        width: 35px;
+                        height: 35px;
+                        background-color: $silver;
+                        border-radius: 35px;
+                        position: relative;
+                        font-size: 1em;
+                        padding: 6px;
+                        fill: $Woodsmoke;
+                    }
+                }
+            }
+        }   
+        
+    }
+}

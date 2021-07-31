@@ -1,0 +1,8 @@
+uuid: f68c242c-5a60-4beb-9f41-a402ec3a5e71
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: events_category
+description: ''
+weight: 0

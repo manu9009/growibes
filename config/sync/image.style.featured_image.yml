@@ -1,0 +1,15 @@
+uuid: 7ab62cfe-e823-4eaf-9458-2aeda2a0f81e
+langcode: en
+status: true
+dependencies: {  }
+name: featured_image
+label: 'Featured News (1140×1134)'
+effects:
+  eda0b30f-cd3f-440e-8db5-3f6303073168:
+    uuid: eda0b30f-cd3f-440e-8db5-3f6303073168
+    id: image_scale
+    weight: 1
+    data:
+      width: 1140
+      height: 1134
+      upscale: false

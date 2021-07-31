@@ -1,0 +1,25 @@
+uuid: e2bb7ac6-6258-4e7d-a8f1-f791dbff262d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a877a931-5dc5-4bb1-90c2-8ed565a244e1'
+  module:
+    - block_content
+  theme:
+    - atrc
+id: socialshareicon
+theme: atrc
+region: social_share
+weight: 0
+provider: null
+plugin: 'block_content:a877a931-5dc5-4bb1-90c2-8ed565a244e1'
+settings:
+  id: 'block_content:a877a931-5dc5-4bb1-90c2-8ed565a244e1'
+  label: 'Social Share Icon'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

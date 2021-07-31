@@ -1,0 +1,19 @@
+uuid: 1e5291e0-ddd4-49df-ba0d-92e3d6c3fc94
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      page: page
+  paragraph_view_mode:
+    enabled: false
+id: content_slider
+label: 'Content Slider'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

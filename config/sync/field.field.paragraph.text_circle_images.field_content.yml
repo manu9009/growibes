@@ -1,0 +1,21 @@
+uuid: cefc748a-074f-443e-8fc2-ce8f21fa32e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.text_circle_images
+  module:
+    - text
+id: paragraph.text_circle_images.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: text_circle_images
+label: Content
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,21 @@
+uuid: dfc41344-ea88-442f-968a-ed1d2779d106
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slogan
+    - paragraphs.paragraphs_type.video_background
+  module:
+    - text
+id: paragraph.video_background.field_slogan
+field_name: field_slogan
+entity_type: paragraph
+bundle: video_background
+label: Slogan
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

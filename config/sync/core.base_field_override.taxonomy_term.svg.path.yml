@@ -1,0 +1,20 @@
+uuid: 007b6e69-f3f0-4d96-856b-2cf7431ea2be
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.svg
+  module:
+    - path
+id: taxonomy_term.svg.path
+field_name: path
+entity_type: taxonomy_term
+bundle: svg
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

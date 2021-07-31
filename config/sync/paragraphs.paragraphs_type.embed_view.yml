@@ -1,0 +1,19 @@
+uuid: dd851c78-a868-48f8-b4a7-ef56e3891382
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraph_view_mode:
+    enabled: true
+  paragraphs_ee:
+    paragraphs_categories:
+      page: page
+id: embed_view
+label: 'Embed View'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

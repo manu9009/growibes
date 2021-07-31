@@ -1,0 +1,76 @@
+uuid: 7c5ec7b2-7e81-43d8-84de-577ee3908b62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_our_research
+    - paragraphs.paragraphs_type.our_research
+    - paragraphs.paragraphs_type.our_research_content
+  module:
+    - entity_reference_revisions
+id: paragraph.our_research.field_content_our_research
+field_name: field_content_our_research
+entity_type: paragraph
+bundle: our_research
+label: 'Content Our Research'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      our_research_content: our_research_content
+    target_bundles_drag_drop:
+      board_member:
+        weight: 17
+        enabled: false
+      card:
+        weight: 18
+        enabled: false
+      cards:
+        weight: 19
+        enabled: false
+      content:
+        weight: 20
+        enabled: false
+      content_slider:
+        weight: 21
+        enabled: false
+      embed_view:
+        weight: 22
+        enabled: false
+      image_background:
+        weight: 23
+        enabled: false
+      list:
+        weight: 24
+        enabled: false
+      lists:
+        weight: 25
+        enabled: false
+      member:
+        weight: 26
+        enabled: false
+      our_research:
+        weight: 27
+        enabled: false
+      our_research_content:
+        enabled: true
+        weight: 28
+      slider:
+        weight: 29
+        enabled: false
+      text_circle_images:
+        weight: 30
+        enabled: false
+      video:
+        weight: 31
+        enabled: false
+      video_background:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,23 @@
+uuid: ff50e3c3-28d9-4a6f-b6e5-776cf59b1675
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_backlink
+    - node.type.page
+id: node.page.field_show_backlink
+field_name: field_show_backlink
+entity_type: node
+bundle: page
+label: 'Show Backlink'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

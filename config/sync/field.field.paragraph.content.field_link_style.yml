@@ -1,0 +1,23 @@
+uuid: 8e9ce28c-6898-4ba5-b3a6-3301ac48632b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_style
+    - paragraphs.paragraphs_type.content
+id: paragraph.content.field_link_style
+field_name: field_link_style
+entity_type: paragraph
+bundle: content
+label: 'Link Style'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

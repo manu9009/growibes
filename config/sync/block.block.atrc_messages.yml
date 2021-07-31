@@ -1,0 +1,26 @@
+uuid: 87942c50-d809-43eb-9f04-d6d1937c1e3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - atrc
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: atrc_messages
+theme: atrc
+region: highlighted
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/home"
+    negate: true

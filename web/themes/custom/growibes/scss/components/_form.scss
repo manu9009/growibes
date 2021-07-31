@@ -1,0 +1,188 @@
+.form{
+    
+ 
+    .formBtn{
+        max-width: 200px;
+    }
+   
+    .form-group{
+        margin-bottom: 2em;
+        width: 100%;
+
+        label{
+            font-size: 14px;
+        }
+        
+        .selectric-form{
+            transition: border-color .5s $powereaseOut;
+            padding: .5em .75em;
+            border: 1px solid $silver;
+
+            .label{
+                margin-left: 0px;
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: -.04em;
+            }
+
+            .selectric-items{
+                width: calc(100% + 2px) !important;
+                left: -1px;
+            }
+        }
+        
+        textarea{
+            border: 1px solid $silver;
+            border-radius: 0px;
+            box-shadow: none;
+            min-height: 124px;
+            resize: vertical;
+           
+        }
+       
+        .form-control{
+            display: block;
+            width: 100%;
+            height: calc(1.5em + 1.25em + 2px);
+            padding: .375em .75em;
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.5;
+            color: $cape;
+            background-color: $white;
+            background-clip: padding-box;
+            border: 1px solid $silver;
+            border-radius: 0px;
+            box-shadow: none;
+            outline: 0;
+            transition: border-color .5s $powereaseOut;
+            width: 100%;
+            font-weight: bold;
+                letter-spacing: -.03em;
+
+            &:hover{
+                border: 1px solid $cape;
+            }
+
+            &:focus{
+                box-shadow: none;
+                outline: 0;
+                border: 1px solid $Woodsmoke;
+                letter-spacing: -.03em;
+            }
+    
+    
+            &::-webkit-input-placeholder { /* Edge */
+                color: $silver;
+                opacity: 1;
+                font-weight: bold;
+                letter-spacing: -.03em;
+            }
+            
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: $silver;
+                opacity: 1;
+                font-weight: bold;
+                letter-spacing: -.03    em;
+            }
+            
+            &::placeholder {
+                color: $silver;
+                opacity: 1;
+                font-weight: bold;
+                letter-spacing: -.05em;
+            }
+
+            &.is-invalid{
+                border:1px solid $thunderbird;
+            }
+            
+        }
+
+        
+
+        .selectize-input{
+            // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 9'%3E%3Cpath d='M9.1 9c.2 0 .4-.1.6-.3l8-7c.4-.4.4-1 .1-1.4-.4-.4-1-.4-1.4-.1L9 6.7 1.7.2C1.3-.2.7-.1.3.3c-.4.4-.3 1 .1 1.4l8 7c.1.2.4.3.7.3z' fill='%23373d3f'/%3E%3C/svg%3E");
+            background-color:rgba($silver, 0.3);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: inline-block;
+            border:0px;
+            position: relative;
+            padding: .7em .75em;
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.5;
+            box-shadow: none;
+
+            input{
+                font-size: 1em;
+            }
+
+            &.focus{
+                background-color:rgba($silver, 0.3);
+                
+            }
+            
+            &:after{
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 9'%3E%3Cpath d='M9.1 9c.2 0 .4-.1.6-.3l8-7c.4-.4.4-1 .1-1.4-.4-.4-1-.4-1.4-.1L9 6.7 1.7.2C1.3-.2.7-.1.3.3c-.4.4-.3 1 .1 1.4l8 7c.1.2.4.3.7.3z' fill='%23373d3f'/%3E%3C/svg%3E");
+                border:0px;
+                height: 20px;
+                width: 20px;
+                background-size: 15px;
+                background-repeat: no-repeat;
+                background-position:center center;
+                transform: translateY(-50%);
+                margin-top:0px;
+            }
+        }
+
+        .selectize-dropdown{
+            font-size:1em;
+            padding: .5em 0;
+            box-shadow: none;
+
+            .option{
+              &:hover, &.selected{
+                background: $purple;
+                color: $white;
+              }
+            }
+        }
+        
+    }
+    
+    .error{
+        display: none;
+        font-size: .9em;
+        color: $thunderbird;
+        
+    }
+
+    .invalid-feedback{
+        display: none;
+        font-size:.8em;
+        color: $thunderbird;
+    }
+
+    .is-invalid{
+
+        ~.invalid-feedback{
+            display: block;
+        }
+
+        ~.selectpicker{
+            .selectize-input{
+                border: 1px solid $thunderbird;
+            }
+        }
+    
+    }
+
+    
+
+    
+}
+
+

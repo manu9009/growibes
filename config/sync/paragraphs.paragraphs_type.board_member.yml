@@ -1,0 +1,19 @@
+uuid: 8fb128f6-836b-496c-8df3-c758bee4d3a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      page: page
+  paragraph_view_mode:
+    enabled: false
+id: board_member
+label: 'Board Member'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

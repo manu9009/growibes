@@ -1,0 +1,39 @@
+<div class="col-md-6 mb-3 mb-md-4">
+  <div class="itemEvents row bg-white m-0" data-scroll="">
+      <div class="col-md-6 d-none d-md-block p-0 mb-0 img_wrapper">
+          <figure class="bg-silver mb-0">
+            {% if content.field_events_image %}
+              <a class="event_popup_button" data-title="{{ label.0|slice(0, 100) }}" href="#"data-toggle="modal" data-target="#eventModal">
+
+              <img class="lazyloaded w-100" data-src="{{ file_url(node.field_events_image.entity.field_media_image.entity.fileuri| image_style('events') ) }}"  src="{{ file_url(node.field_events_image.entity.field_media_image.entity.fileuri| image_style('events') ) }}"  alt="{{ label.0|slice(0, 100) }} ">
+
+              </a>
+            {% endif %}
+          </figure>
+      </div>
+      <div class="content col-md-6 d-flex flex-wrap flex-column">
+          <small class="d-block mb-4 fw-medium fc-gray">{{ content.field_location }}</small>
+          <a href="#" data-toggle="modal" data-target="#eventModal" data-title="{{ label.0|slice(0, 100) }}"  class="h5 d-block fw-bold mb-2 event_popup_button t-link-dark event_popup_title">
+            {{ label|length > 60 ? label| slice(0, 60) ~ '...' : label }}
+          </a>
+
+          <div class="mt-auto  d-flex justify-content-between align-items-center">
+              <span class="date h6 fc-gray">
+                {% if content.field_events_date.0['start_date']['#attributes']['datetime']|date('m') == content.field_events_date.0['end_date']['#attributes']['datetime']|date('m') and content.field_events_date.0['start_date']['#attributes']['datetime']|date('d') != content.field_events_date.0['end_date']['#attributes']['datetime']|date('d') %}
+              {{ content.field_events_date.0['start_date']['#attributes']['datetime']|date('d') }} - {{ content.field_events_date.0['end_date'] }}
+            {% elseif content.field_events_date.0['start_date']['#attributes']['datetime']|date('d') == content.field_events_date.0['end_date']['#attributes']['datetime']|date('d') and content.field_events_date.0['start_date']['#attributes']['datetime']|date('m') == content.field_events_date.0['end_date']['#attributes']['datetime']|date('m')%}
+              {{ content.field_events_date.0['end_date'] }}
+            {% elseif content.field_events_date.0['start_date']['#attributes']['datetime']|date('y') != content.field_events_date.0['end_date']['#attributes']['datetime']|date('y') %}
+              {{ content.field_events_date }}
+            {% else %}
+              {{ content.field_events_date.0['start_date']['#attributes']['datetime']|date('d M') }} - {{ content.field_events_date.0['end_date'] }}
+            {% endif %}</span>
+
+             <button href="" class="icon-linked event_popup_button"  data-title="{{ label.0|slice(0, 100) }}" data-toggle="modal" data-target="#eventModal"><i><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></i></button>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+

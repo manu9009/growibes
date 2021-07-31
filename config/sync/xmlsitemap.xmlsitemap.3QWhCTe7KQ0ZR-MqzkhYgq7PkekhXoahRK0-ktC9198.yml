@@ -1,0 +1,8 @@
+uuid: 85c66d6d-d7d1-4896-a79c-7e3aec6f5fd1
+langcode: en
+status: true
+dependencies: {  }
+id: 3QWhCTe7KQ0ZR-MqzkhYgq7PkekhXoahRK0-ktC9198
+label: 'https://atrc.ae/ar'
+context:
+  language: ar

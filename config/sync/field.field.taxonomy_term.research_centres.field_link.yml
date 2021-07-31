@@ -1,0 +1,23 @@
+uuid: facba906-3755-4693-ab06-6b5eb2eb75ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_link
+    - taxonomy.vocabulary.research_centres
+  module:
+    - link
+id: taxonomy_term.research_centres.field_link
+field_name: field_link
+entity_type: taxonomy_term
+bundle: research_centres
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

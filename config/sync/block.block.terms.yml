@@ -1,0 +1,25 @@
+uuid: 2b9771ec-156f-4acc-94c3-0c8e58877e3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.terms
+  module:
+    - system
+  theme:
+    - atrc
+id: terms
+theme: atrc
+region: footer_second
+weight: -7
+provider: null
+plugin: 'system_menu_block:terms'
+settings:
+  id: 'system_menu_block:terms'
+  label: Terms
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

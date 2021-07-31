@@ -1,0 +1,23 @@
+uuid: 33bd43a2-794a-4b76-aa08-fc778df41d8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.svg.field_svg
+    - taxonomy.vocabulary.svg
+id: taxonomy_term.svg.default
+targetEntityType: taxonomy_term
+bundle: svg
+mode: default
+content:
+  field_svg:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  description: true
+  langcode: true

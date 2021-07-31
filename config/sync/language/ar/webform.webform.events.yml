@@ -1,0 +1,9 @@
+elements: |
+  first_name:
+    '#title': ' الاسم الكامل'
+    '#placeholder': ' الاسم الكامل'
+  email_address:
+    '#title': ' عنوان البريد الإلكتروني'
+    '#placeholder': ' عنوان البريد الإلكتروني'
+  message:
+    '#title': الرسالة

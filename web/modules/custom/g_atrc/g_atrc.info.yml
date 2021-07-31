@@ -1,0 +1,5 @@
+name: 'ATRC'
+type: module
+description: 'Custom module for ATRC.'
+package: 'Custom'
+core_version_requirement: ^8.8.0 || ^9.0

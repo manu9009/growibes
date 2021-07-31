@@ -1,0 +1,47 @@
+uuid: 61e59e58-f50e-4c0a-b0d4-0e0026745077
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser
+    - field.field.taxonomy_term.research_centres.field_link
+    - field.field.taxonomy_term.research_centres.field_research_image
+    - taxonomy.vocabulary.research_centres
+  module:
+    - link
+    - text
+id: taxonomy_term.research_centres.teaser
+targetEntityType: taxonomy_term
+bundle: research_centres
+mode: teaser
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_research_image:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,41 @@
+uuid: 97a114e8-7ba1-44e4-b65e-a40b46f78fd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_circle_images.field_content
+    - field.field.paragraph.text_circle_images.field_images
+    - field.field.paragraph.text_circle_images.field_title
+    - paragraphs.paragraphs_type.text_circle_images
+  module:
+    - text
+id: paragraph.text_circle_images.default
+targetEntityType: paragraph
+bundle: text_circle_images
+mode: default
+content:
+  field_content:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_images:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

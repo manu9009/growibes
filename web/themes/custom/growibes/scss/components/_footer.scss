@@ -1,0 +1,192 @@
+footer{
+    position: relative;
+   padding-left: .5em;
+    padding-right: .5em;
+
+    @include lg{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .slogan{
+        position: absolute;
+        font-weight: 500;
+        transform: rotate(90deg);
+        top: 3.5em;
+        right: -24px;
+        color: white;
+        transform-origin: center center;
+        display: none;
+
+        @include md{
+            display: block;
+        }
+    }
+
+    .top{
+        position: absolute;
+        top:-30px;
+        right:30px;
+        z-index: 9;
+
+        @include xl{
+            right:calc((100% - 1100px)/4);
+        }
+        
+        @include xxl{
+            right:calc((100% - 1400px)/4);
+        }
+
+        i{
+            background: $white;
+            line-height: 0;
+            padding: 10px;
+            border-radius: 30px;
+            display: inline-block;
+
+            .icon-svg{
+                fill:$purple;
+                font-size: 1.7em;
+            }
+        } 
+    }
+    .footer-logo{
+        display: none;
+
+        @include md{
+            display: block;
+        }
+
+        img{
+            width: 160px;
+
+            @include lg{
+                width: 180px;
+            }
+        }
+    }
+
+    .quickLinks{
+        column-count: 2;
+        column-gap: 0px;
+        
+
+        @include md{
+            padding-right: 0;
+        }
+
+        li{
+            margin-bottom: 1em;
+
+            @include md{
+                margin-bottom: .5em;
+            }
+
+            a{
+                text-transform: uppercase;
+                color: $white;
+                letter-spacing: 1px;
+                font-size: .875em;
+                font-weight: 500;
+                line-height: 1.2;
+                display: block;
+            
+
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .privacy{
+        margin-top: 2em;
+
+        a{
+            color: $white;
+            margin-right: 2em;
+            font-size: .875em;
+        
+            &:hover{
+                color: $white;
+            }
+        }
+    }
+
+    .copyright{
+        margin-top: 50px;
+
+        @include md{
+            margin-top: 2em;
+        }
+
+        p{
+            color: $white;
+            font-size: .875em;
+        }
+    }
+
+    .social{
+        padding-top: 2em;
+        border-top: 1px solid rgba($color: #fff, $alpha: 0.5);
+        margin-top: 2em;
+
+
+
+        .socialLinks, .email{
+            .h6{
+                color:$white;
+                font-weight: 500;
+                font-size: 1;
+                margin-bottom: 1em;
+            }
+        }
+        
+        .socialLinks{
+            a{
+                margin-right: 1em;
+
+                @include md{
+                    margin-right: 1.4em;
+                }
+                
+                i{
+                    .icon-svg{
+                        fill: $white;
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+
+        .email{
+            
+
+            a{
+                color: $white;
+                font-weight: 500;
+
+                &:hover{
+                    text-decoration: none;
+                }
+
+                i{
+                    padding: 10px;
+                    border-radius: 20px;
+                    background-color: #ffffff;
+                    line-height: 0;
+                    margin-right: .5em;
+
+                    .icon-svg{
+                        fill:$purple;
+                        font-size: 1em;
+                    }
+                }
+                
+            }
+        }
+    }
+
+
+    
+}

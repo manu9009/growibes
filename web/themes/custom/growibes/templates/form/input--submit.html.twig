@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Default theme implementation for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ *
+ * @ingroup themeable
+ */
+#}
+<span class="action-button-custom">
+<input{{ attributes }} />{{ children }}
+<i><svg id="arrow-right" viewBox="0 0 48 48">
+    <path class="arrow-right" d="M24,8l-2.8,2.8L32.3,22H8v4h24.3L21.2,37.2L24,40l16-16L24,8z"></path>
+</svg></i>
+</span>

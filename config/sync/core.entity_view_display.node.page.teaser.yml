@@ -1,0 +1,65 @@
+uuid: 73913e13-cec7-467c-8b3f-91f5eb6ecef2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.body
+    - field.field.node.page.field_backlink
+    - field.field.node.page.field_content
+    - field.field.node.page.field_footer
+    - field.field.node.page.field_header
+    - field.field.node.page.field_lead_text
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_show_backlink
+    - field.field.node.page.field_view_mode
+    - node.type.page
+  module:
+    - entity_reference_revisions
+    - user
+    - view_mode_selector
+_core:
+  default_config_hash: cSv5lDnbIgDug475Hdz3woED2XMqYv3awI-J9u1JLbY
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  field_content:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_footer:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_view_mode:
+    type: view_mode_selector
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_backlink: true
+  field_header: true
+  field_lead_text: true
+  field_meta_tags: true
+  field_show_backlink: true
+  langcode: true

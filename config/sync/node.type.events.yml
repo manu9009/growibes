@@ -1,0 +1,17 @@
+uuid: 4ee19113-0266-46eb-953f-3ed1985932c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Events
+type: events
+description: 'ATRC Events'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

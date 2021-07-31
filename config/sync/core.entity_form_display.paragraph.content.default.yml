@@ -1,0 +1,102 @@
+uuid: 3236dc33-98cd-4461-abe0-e7da6772ce91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content.field_column
+    - field.field.paragraph.content.field_content
+    - field.field.paragraph.content.field_image
+    - field.field.paragraph.content.field_leadtext
+    - field.field.paragraph.content.field_link
+    - field.field.paragraph.content.field_link_style
+    - field.field.paragraph.content.field_title
+    - field.field.paragraph.content.paragraph_view_mode
+    - paragraphs.paragraphs_type.content
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+    - media_library
+    - paragraph_view_mode
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.content.default
+targetEntityType: paragraph
+bundle: content
+mode: default
+content:
+  field_column:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_content:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_image:
+    type: media_library_widget
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_leadtext:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_link_style:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: -100
+    settings:
+      view_modes:
+        default: Default
+        content: Content
+        footer: Footer
+      default_view_mode: default
+    third_party_settings: {  }
+    region: content
+  translation:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

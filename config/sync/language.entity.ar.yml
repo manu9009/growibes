@@ -1,0 +1,9 @@
+uuid: 2f31d170-c08a-40a4-98a3-e3da04d55da9
+langcode: ar
+status: true
+dependencies: {  }
+id: ar
+label: AR
+direction: rtl
+weight: 1
+locked: false

@@ -1,0 +1,18 @@
+uuid: 7276d415-0772-4c11-bcaf-286365ba6290
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.svg
+id: taxonomy_term.svg.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: svg
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

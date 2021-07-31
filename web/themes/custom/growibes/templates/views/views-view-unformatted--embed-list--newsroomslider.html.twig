@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if rows | length == 1 %}
+ {% set news_slider = 'slider' %}
+{% else %}
+ {% set news_slider = '' %}
+{% endif %}
+
+<div class="row">
+   <div class="col-md-12">
+  <div class="newSlider {{ news_slider }} ">
+   <div class="newSliderWrap swiper-wrapper">
+    {% for row in rows %}
+      {%
+        set row_classes = [
+          default_row_class ? 'newSlider__item row m-0 swiper-slide',
+        ]
+      %}
+      <div {{ row.attributes.addClass(row_classes) }}>
+        {{- row.content -}}
+      </div>
+    {% endfor %}
+  </div>
+  {% if  rows | length > 1 %}
+  <div class="newSlider__pagination d-flex"></div>
+  {% endif %}
+  </div>
+</div>
+</div>

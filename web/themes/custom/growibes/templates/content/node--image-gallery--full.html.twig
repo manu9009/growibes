@@ -1,0 +1,115 @@
+<section class="inner-banner" data-scroll-section="" data-scroll-section-inview>
+    <div class="container">
+        <div class="inner-details-banner  border-bottom">
+            <div class="row">
+                <div class="col-lg-12 col-xl-12">
+                    <div class="g-padding-y p-content">
+                        <div class="section-details row ">
+                            <div class="col-md-2">
+                                <span class="h2 d-block fc-gray fw-bold">
+                                    Media
+                                </span>
+                            </div>
+                            <div class="col-md-10">
+                                <span class="h2 d-block  fw-bold ">
+                                    {{ label }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ block_tabs }}
+        </div>
+    </div>
+    <div class="graphic speed-block" data-scroll="" data-scroll-speed="2" data-scroll-position="top">
+        <figure class="mb-0 image" data-scroll="">
+            <img data-src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" alt="ATRC" class="lazyload">
+        </figure>
+    </div>
+</section>
+<section class="inner-content" data-scroll-section="" data-scroll-section-inview="">
+    <div class="container ">
+        <div class=" g-padding-y pb-0">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="row" id="gallery" data-toggle="modal" data-target="#imageWrapModal">
+                        {% for image in node.field_gallery_images %}
+                            <div class="col-md-4 mb-4">
+                                <figure class="bg-silver mb-0">
+                                    {% set image = image.entity.field_media_image.entity.fileuri|image_style('media') %}
+                                    <img data-src="{{ image }}" data-target="#imageModal" data-slide-to="0" src="{{ image }}" data-expand="-100" alt="" class="w-100 ls-is-cached lazyloaded">
+                                </figure>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container newsContent g-padding-y p-content">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <a class="btn linked-black reversed" href="/media">
+                    <span>Back to media</span><i><svg class="icon-svg arrow-left"><use xlink:href="#arrow-left"></use></svg></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="graphic speed-block" data-scroll="" data-scroll-speed="1" >
+        <figure class="mb-0 image" data-scroll="">
+            <img data-src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" alt="ATRC" class="lazyload">
+        </figure>
+    </div>
+</section>
+<!--Image modal-->
+<div class="modal modalBox" tabindex="-1" id="imageWrapModal" style="display: none;" aria-hidden="true">
+    <div class="container">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="close d-flex align-items-center" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">Close</span>
+            <i><svg class="icon-svg icon-close"><use xlink:href="#icon-close"></use></svg></i>
+            </button>
+            <div class="modal-title py-5">
+                <div class="title">
+                    <span class="h3 d-block fc-gray fw-bold mb-0">
+                        Media Gallery
+                    </span>
+                    <span class="h3 d-block  fc-black fw-bold">
+                        {{ label.0 }}
+                    </span>
+                </div>
+            </div>
+            <div class="modal-image">
+                <div class="row justify-content-center  bg-silver m-0">
+                    <div class="col-md-8">
+                        <div id="imageModal" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                {% for image in node.field_gallery_images %}
+                                    <li data-target="#imageModal" data-slide-to="{{ loop.index }}" class="{{ loop.index == '2' ? 'active' :'' }}"></li>
+                                {% endfor %}
+                            </ol>
+                            <div class="carousel-inner">
+                                {% for image in node.field_gallery_images %}
+                                    <div class="carousel-item {{ loop.index == '2' ? 'active' :'' }}">
+                                        <figure class="bg-silver mb-0">
+                                            <img data-src="{{ file_url(image.entity.field_media_image.entity.fileuri) }}" src="{{ file_url(image.entity.field_media_image.entity.fileuri) }}" data-expand="-100" alt="" class="w-100 ls-is-cached lazyloaded">
+                                        </figure>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <a class="carousel-control-prev" href="#imageModal" role="button" data-slide="prev">
+                                <span class="" aria-hidden="true">  <i><svg class="icon-svg caret-left"><use xlink:href="#caret-left"></use></svg></i></span>
+                            </a>
+                            <a class="carousel-control-next" href="#imageModal" role="button" data-slide="next">
+                                <span class="" aria-hidden="true">  <i><svg class="icon-svg caret-right"><use xlink:href="#caret-right"></use></svg></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

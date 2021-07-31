@@ -1,0 +1,23 @@
+uuid: be5d3a4a-4b26-497f-ae3b-ecb198fcb570
+langcode: en
+status: true
+dependencies: {  }
+name: about_us
+label: 'About us (1140×692)'
+effects:
+  7169f0cb-de81-4d85-a780-5880244deffb:
+    uuid: 7169f0cb-de81-4d85-a780-5880244deffb
+    id: image_scale
+    weight: -9
+    data:
+      width: 1140
+      height: 692
+      upscale: false
+  c8b1df2c-224c-49d1-bb4a-fb3b41904efc:
+    uuid: c8b1df2c-224c-49d1-bb4a-fb3b41904efc
+    id: image_scale_and_crop
+    weight: -10
+    data:
+      width: 1140
+      height: 692
+      anchor: center-center

@@ -1,0 +1,21 @@
+uuid: 28d81c55-0aa1-4805-ba45-a98365581e1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_caption
+    - paragraphs.paragraphs_type.member
+  module:
+    - text
+id: paragraph.member.field_caption
+field_name: field_caption
+entity_type: paragraph
+bundle: member
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

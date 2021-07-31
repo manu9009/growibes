@@ -1,0 +1,10 @@
+uuid: ca22200c-51f0-45f5-968f-3d36dec2726a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featured
+label: Featured
+targetEntityType: node
+cache: true

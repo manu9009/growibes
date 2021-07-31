@@ -1,0 +1,17 @@
+<div class="itemMedia bg-white m-0" data-scroll="">
+  {% if node.field_video_poster %}
+    <div class="img_wrapper">
+      <figure class="bg-silver mb-0">
+        <img data-src="  {{ file_url(node.field_video_poster.entity.field_media_image.entity.fileuri| image_style('media')) }}" src="  {{ file_url(node.field_video_poster.entity.field_media_image.entity.fileuri| image_style('media')) }}" data-expand="-100" alt="" class="w-100">
+      </figure>
+    </div>
+  {% endif %}
+  <div class="content  d-flex flex-wrap flex-column">
+    <small class="d-block mb-3 fw-medium fc-gray">Video</small>
+    <a href="{{ url }}" class="h5 d-block fw-bold mb-5 t-link-dark">
+      {# { label.0 } #}
+      {{ label|length > 40 ? label| slice(0, 40) ~ '...' : label }}
+    </a>
+    <small class="type fc-gray mt-auto">{{ content.field_category.0 }}</small>
+  </div>
+</div>

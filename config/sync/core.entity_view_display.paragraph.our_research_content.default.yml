@@ -1,0 +1,31 @@
+uuid: 56a30e8f-c3d3-4a62-8c9f-facd12ba1c9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_research_content.field_image
+    - field.field.paragraph.our_research_content.field_title
+    - paragraphs.paragraphs_type.our_research_content
+id: paragraph.our_research_content.default
+targetEntityType: paragraph
+bundle: our_research_content
+mode: default
+content:
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

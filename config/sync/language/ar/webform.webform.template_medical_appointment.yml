@@ -1,0 +1,7 @@
+settings:
+  confirmation_url: /contact
+handlers:
+  email_notification:
+    settings:
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'

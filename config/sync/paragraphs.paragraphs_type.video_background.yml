@@ -1,0 +1,19 @@
+uuid: 7dda6885-89c0-42b0-a975-83bd3a7af8ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      header: header
+  paragraph_view_mode:
+    enabled: false
+id: video_background
+label: 'Video Background'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

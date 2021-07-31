@@ -1,0 +1,8 @@
+uuid: d9d73413-fdac-453b-af03-fb6dcbc2ea2d
+langcode: en
+status: true
+dependencies: {  }
+id: page
+label: Page
+description: ''
+weight: -10

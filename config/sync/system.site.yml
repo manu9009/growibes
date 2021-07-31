@@ -1,0 +1,15 @@
+uuid: d0650599-c2d6-4406-b2ca-c699a3e024fb
+name: ATRC
+mail: webmaster@atrc.ae
+slogan: ''
+page:
+  403: /node/38
+  404: /node/37
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+mail_notification: ''

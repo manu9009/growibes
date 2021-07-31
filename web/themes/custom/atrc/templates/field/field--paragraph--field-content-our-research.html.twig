@@ -1,0 +1,15 @@
+{% if is_front %}
+  <div class="container" data-scroll-section>
+{% else %}
+  <div class="container">
+{% endif %}
+  <div class="researchBlock  g-padding-y2 pt-0">
+    <div class="row justify-content-center researchBlock-wrapper">
+      {% for item in items %}
+        <div class="col-md-6 col-lg-4 researchBlock-item">
+          {{ item.content  }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

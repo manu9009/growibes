@@ -1,0 +1,17 @@
+uuid: c514fcb9-e809-468d-a06c-32efb69c1d5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: news
+label: 'News (340×340)'
+effects:
+  d7fa449a-0d97-4b01-9147-6901f2edb8e8:
+    uuid: d7fa449a-0d97-4b01-9147-6901f2edb8e8
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 340
+      height: 340
+      crop_type: focal_point

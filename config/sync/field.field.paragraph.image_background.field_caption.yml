@@ -1,0 +1,21 @@
+uuid: 5b55cb8e-a657-4fa6-83a5-091643dd2c03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_caption
+    - paragraphs.paragraphs_type.image_background
+  module:
+    - text
+id: paragraph.image_background.field_caption
+field_name: field_caption
+entity_type: paragraph
+bundle: image_background
+label: Caption
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,31 @@
+uuid: dfa18122-0f92-464f-b51d-b9313432732e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_upload
+    - media.type.remote_video
+    - media.type.video
+    - paragraphs.paragraphs_type.video_background
+id: paragraph.video_background.field_video_upload
+field_name: field_video_upload
+entity_type: paragraph
+bundle: video_background
+label: 'Video Upload'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_video: remote_video
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: remote_video
+field_type: entity_reference

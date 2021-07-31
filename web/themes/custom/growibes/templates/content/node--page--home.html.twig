@@ -1,0 +1,72 @@
+{%
+set classes = [
+'node',
+'node--type-' ~ node.bundle|clean_class,
+node.isPromoted() ? 'node--promoted',
+node.isSticky() ? 'node--sticky',
+not node.isPublished() ? 'node--unpublished',
+view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+'clearfix',
+]
+%}
+{% if  content.field_view_mode.0['#text']  == 'home' %}
+  {% if content.field_header %}
+    {{ content.field_header.0 }}
+  {% endif %}
+  {{ content.field_content }}
+{% else %}
+  <section class="inner-banner" data-scroll-section="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 pt-5">
+          <div class="section-details border-bottom g-padding-y p-content">
+            <div data-scroll="">
+            {% if language.getId() == 'ar' or language == 'ar' %}
+              <span class="banner-title-line">
+                <span class="title fw-bold">
+                  {{ label.0 }}
+                </span>
+              </span>
+            {% else %}
+              <span class="banner-title-line words chars splitting" data-splitting="" style="--word-total:2; --char-total:17;">
+                <span class="title fw-bold">
+                  {{ label.0 }}
+                </span>
+              </span>
+            {% endif %}
+            </div>
+
+            {% if language.getId() == 'ar' or language == 'ar' %}
+              {% set sloganimage = "slogan-rotate-ar.svg" %}
+            {% else %}
+              {% set sloganimage = "slogan-rotate.svg" %}
+            {% endif %}
+
+            <div class="slogan" data-scroll="" data-scroll-position="top" data-scroll-speed="1.5">
+              <img src="{{ base_url }}/{{ directory }}/images/{{ sloganimage }}" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="graphic speed-block" data-scroll="" data-scroll-speed="-2" data-scroll-position="top">
+      <figure class="mb-0 image" data-scroll="">
+        <img data-src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" alt="ATRC" class="lazyload">
+      </figure>
+    </div>
+  </section>
+  <section class="inner-content" data-scroll-section="" data-scroll-section-inview="" >
+    <div class="container ">
+      {% if content.field_header %}
+        {{ content.field_header.0 }}
+      {% endif %}
+    </div>
+    {% if content.field_content %}
+      {{ content.field_content }}
+    {% endif %}
+  </section>
+  {% if content.field_footer %}
+    {{ content.field_footer }}
+  {% endif %}
+{% endif %}

@@ -1,0 +1,15 @@
+uuid: 8707de49-9a71-4ab6-9453-10a6870ec3ff
+langcode: en
+status: true
+dependencies: {  }
+name: media
+label: 'Media (270×210)'
+effects:
+  6333f979-de6b-4f02-9268-29b3c668f799:
+    uuid: 6333f979-de6b-4f02-9268-29b3c668f799
+    id: image_scale
+    weight: 1
+    data:
+      width: 270
+      height: 210
+      upscale: true

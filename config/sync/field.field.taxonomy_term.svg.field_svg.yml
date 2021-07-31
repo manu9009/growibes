@@ -1,0 +1,19 @@
+uuid: 486d04dc-e558-4943-8c12-059eff51aed3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_svg
+    - taxonomy.vocabulary.svg
+id: taxonomy_term.svg.field_svg
+field_name: field_svg
+entity_type: taxonomy_term
+bundle: svg
+label: SVG
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

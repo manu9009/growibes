@@ -1,0 +1,119 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+    {% block content %}
+
+      <section  id="homeAbout" class=" homeAbout section  g-padding-y" data-scroll-section>
+    <div class="container">
+        <div class="row justify-content-between align-items-start">
+            <div class="col-md-7 col-lg-5">
+              {% if content.field_title|render|striptags|trim|length > 0 %}
+                <div class="section_title"  data-scroll  data-scroll-speed="1" >
+                  {% if language.getId() == 'ar' or language == 'ar' %}
+                    <span class="h2 fw-bold title text-a viewport"  >
+                      {{ content.field_title|render|striptags|trim }}
+                    </span>
+                  {% else %}
+                    <span  data-splitting class="h2 fw-bold title text-a viewport"  >
+                      {{ content.field_title|render|striptags|trim }}
+                    </span>
+                  {% endif %}
+                </div>
+                {% endif %}
+
+                <article  class="mt-4" data-scroll  data-scroll-speed="1.5">
+                    {{ content|without('field_title', 'field_images') }}
+                </article>
+
+                  {% set contentLenght = content|without('field_title', 'field_images')|render|striptags %}
+
+                  {% if contentLenght|length > 650 %}
+
+                <div class="btn-group mt-4" >
+                    <a class="btn linked-blacked showmore" href=".wordCut" data-scroll-to>
+                            <span>Show more</span><i><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></i>
+                        </a>
+                </div>
+              {%endif%}
+            </div>
+
+            <div class="col-md-5 col-lg-6 d-md-block d-none pr-5">
+                {% if content.field_images %}
+                <div class="image_wrapper" >
+                        <figure data-scroll data-scroll-speed="-1" data-scroll-position="top">
+                          {% set image_url = file_url(content.field_images[0]['#media'].field_media_image.entity.uri.value) %}
+                          {% set image_alt = content.field_images[0]['#media'].field_media_image.alt ? content.field_images[0]['#media'].field_media_image.alt : "" %}
+                            <img data-expand="-100" data-src="{{ image_url }}" src="themes/custom/atrc/images/placeholder.jpg" alt="{{ image_alt }}" class="lazyload w-100">
+                        </figure>
+                </div>
+
+                <div class="image_wrapper small" data-scroll data-scroll-speed="2"  >
+                        <figure >
+                          {% set image_url_1 = file_url(content.field_images[1]['#media'].field_media_image.entity.uri.value) %}
+                          {% set image_alt_1 = content.field_images[1]['#media'].field_media_image.alt ? content.field_images[1]['#media'].field_media_image.alt : '' %}
+                            <img data-expand="-100" data-src="{{ image_url_1 }}" src="{{ base_url }}/{{ directory }}/images/placeholder.jpg" alt="{{ image_alt_1 }}" class="lazyload w-100">
+                        </figure>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="graphic speed-block" data-scroll data-scroll-speed="-1" data-scroll-position="top" >
+            <figure class="mb-0 image">
+                <img data-src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" alt="ATRC" class="lazyload w-100" />
+            </figure>
+        </div>
+
+    </div>
+
+</section>
+
+    {% endblock %}
+
+{% endblock paragraph %}

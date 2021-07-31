@@ -1,0 +1,20 @@
+uuid: 3893ff27-2772-4663-a319-691827f6aa92
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.image_gallery
+  module:
+    - path
+id: node.image_gallery.path
+field_name: path
+entity_type: node
+bundle: image_gallery
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,70 @@
+uuid: 642b4506-b43f-454a-b7bb-5ba07650602b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card
+    - paragraphs.paragraphs_type.board_member
+    - paragraphs.paragraphs_type.member
+  module:
+    - entity_reference_revisions
+id: paragraph.board_member.field_card
+field_name: field_card
+entity_type: paragraph
+bundle: board_member
+label: 'Add Member'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      member: member
+    target_bundles_drag_drop:
+      board_member:
+        weight: 15
+        enabled: false
+      card:
+        weight: 16
+        enabled: false
+      cards:
+        weight: 17
+        enabled: false
+      content:
+        weight: 18
+        enabled: false
+      content_slider:
+        weight: 19
+        enabled: false
+      embed_view:
+        weight: 20
+        enabled: false
+      image_background:
+        weight: 21
+        enabled: false
+      list:
+        weight: 22
+        enabled: false
+      lists:
+        weight: 23
+        enabled: false
+      member:
+        enabled: true
+        weight: 24
+      slider:
+        weight: 25
+        enabled: false
+      text_circle_images:
+        weight: 26
+        enabled: false
+      video:
+        weight: 27
+        enabled: false
+      video_background:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

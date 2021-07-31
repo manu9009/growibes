@@ -1,0 +1,42 @@
+uuid: b5bfcdc8-6a12-4e5d-80e6-e7b574aa31d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.board_member.field_card
+    - paragraphs.paragraphs_type.board_member
+  module:
+    - field_layout
+    - layout_discovery
+    - paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.board_member.default
+targetEntityType: paragraph
+bundle: board_member
+mode: default
+content:
+  field_card:
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+hidden:
+  created: true
+  status: true

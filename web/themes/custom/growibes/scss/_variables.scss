@@ -1,0 +1,32 @@
+// Colors
+$purple     : #6400ff ;
+$turquoise  : #63e8e4;
+$alizarin   : #E12225;
+$cape       : rgba(0,0,0,.6);
+$silver     : #dddddd;
+$white      : rgb(255, 255, 255);
+$light      : #f0f0f0;
+$Woodsmoke  : #000000;
+$thunderbird : #cd1719;
+$powereaseOut: cubic-bezier(.215,.61,.355,1);
+
+$ft-en      : 'Gotham', 'Helvetica', 'Arial', sans-serif !default;
+
+$fw-normal  : normal;
+$fw-bold    : bold;
+$fw-medium   : 500;
+$mobile-width: 479px;
+
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1100px;
+$xxl: 1480px;
+
+
+@mixin xs {
+    @media only screen and (max-width: #{$mobile-width}) {
+      @content;
+    }
+}

@@ -1,0 +1,12 @@
+settings:
+  confirmation_message: "<h5 class=\"fw-bold h5 d-block fc-black\">Message sent!</h5>\r\nThank you for contacting ATRC.<br />\r\nWe will get in touch with you shortly."
+  confirmation_url: /contact
+handlers:
+  email_confirmation:
+    settings:
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'
+  email_notification:
+    settings:
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'

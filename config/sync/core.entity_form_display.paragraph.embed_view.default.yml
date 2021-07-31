@@ -1,0 +1,71 @@
+uuid: 7c813ea6-2b0c-4802-b77c-5d35d5f1ecab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.embed_view.field_content
+    - field.field.paragraph.embed_view.field_link
+    - field.field.paragraph.embed_view.field_title
+    - field.field.paragraph.embed_view.field_view
+    - field.field.paragraph.embed_view.paragraph_view_mode
+    - paragraphs.paragraphs_type.embed_view
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+    - paragraph_view_mode
+    - text
+    - viewsreference
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.embed_view.default
+targetEntityType: paragraph
+bundle: embed_view
+mode: default
+content:
+  field_content:
+    weight: 1
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_view:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: viewsreference_select
+    region: content
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: -100
+    settings:
+      view_modes:
+        default: Default
+        content: Content
+      default_view_mode: default
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

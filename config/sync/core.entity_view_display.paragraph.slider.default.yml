@@ -1,0 +1,24 @@
+uuid: 6ac7aa80-0f35-4da6-a2dc-42a7dd04119a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slider.field_content_slider
+    - paragraphs.paragraphs_type.slider
+  module:
+    - entity_reference_revisions
+id: paragraph.slider.default
+targetEntityType: paragraph
+bundle: slider
+mode: default
+content:
+  field_content_slider:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

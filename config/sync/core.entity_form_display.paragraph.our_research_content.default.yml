@@ -1,0 +1,40 @@
+uuid: 09d97c65-6577-4f5b-b193-6f73f0e47884
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_research_content.field_image
+    - field.field.paragraph.our_research_content.field_title
+    - paragraphs.paragraphs_type.our_research_content
+  module:
+    - field_layout
+    - layout_discovery
+    - media_library
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.our_research_content.default
+targetEntityType: paragraph
+bundle: our_research_content
+mode: default
+content:
+  field_image:
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

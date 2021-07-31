@@ -1,0 +1,94 @@
+{% if content.field_view[0]['contents']['#display_id'] is not empty %}
+  {% set view_embed = content.field_view[0]['contents']['#display_id'] %}
+  {% if view_embed == 'embed_news' or view_embed == 'all_news' %}
+    {% set classes = 'newslisting' %}
+  {% elseif view_embed == 'embed_events' or view_embed == 'all_events' %}
+    {% set classes = 'eventListing' %}
+  {% elseif view_embed == 'embed_media' %}
+    {% set classes = 'mediaListing' %}
+  {% else %}
+    {% set classes = '' %}
+  {% endif %}
+{% else %}
+  {% set classes = '' %}
+{% endif %}
+
+{% if view_embed == 'block_1' %}
+    <div class="container faq-block-custom">
+      <div class="row justify-content-between align-items-start g-padding-y">
+        <div class="section_title col-12 col-md-3" data-scroll="">
+            {% if language.getId() == 'ar' or language == 'ar' %}
+              <span class="h2 fw-bold title fc-black text-a scroll" data-scroll="">
+              {{ content.field_title }}
+              </span>
+            {% else %}
+              <span data-splitting="" class="h2 fw-bold title fc-black text-a scroll words chars splitting" data-scroll="">
+              {{ content.field_title }}
+              </span>
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+          {{ content|without('field_title', 'field_link','field_content') }}
+        </div>
+      </div>
+    </div>
+{% else  %}
+
+
+  {% if view_mode == 'home' %}
+    <section id="stickynav" class="inner-content bg-light" data-scroll-section="" data-persistent="" data-scroll-section-inview="">
+    {% endif %}
+    {% if view_mode != 'home' %}
+      <div class="bg-light">
+      {% endif %}
+      {% if view_embed == 'all_news' %}
+            {{ content|without('field_title', 'field_link') }}
+      {% elseif view_embed == 'all_media' %}
+            {{ content|without('field_title', 'field_link') }}
+      {% elseif view_embed == 'all_events' %}
+            {{ content|without('field_title', 'field_link') }}
+      {% else %}
+        <div class="container {{ classes }}">
+          <div class="g-padding-y">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="text-content">
+                <span class="d-block h3 fw-bold name">{{ content.field_title }}</span>
+              </div>
+              {% if content.field_content.0 %}
+                <article class="col-lg-6 col-12 content mt-lg-0" data-scroll="">
+                  {{ content.field_content.0 }}
+                  {% if content.field_link.0['#url'] %}
+                    <a class="btn linked mt-4" href="{{ content.field_link.0['#url'] }}">
+                      <span>{{ content.field_link.0['#title'] }}</span><i><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></i>
+                    </a>
+                  {% endif %}
+                </article>
+              {% elseif content.field_link.0['#url'] %}
+                <a class="btn linked mt-4" href="{{ content.field_link.0['#url'] }}">
+                  <span>{{ content.field_link.0['#title'] }}</span><i><svg class="icon-svg arrow-right"><use xlink:href="#arrow-right"></use></svg></i>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row">
+            {{ content|without('field_title', 'field_link', 'field_content') }}
+          </div>
+        </div>
+      {% endif %}
+
+
+      {% if view_embed == 'embed_news' or view_embed == 'embed_events' %}
+        <span class="divider"></span>
+      {% endif %}
+      <div class="graphic speed-block" data-scroll="" data-scroll-speed="1">
+        <figure class="mb-0 image" data-scroll="">
+          <img data-src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" alt="ATRC" class="lazyload">
+        </figure>
+      </div>
+      {% if view_mode != 'home' %}
+      </div>
+    {% endif %}
+    {% if view_mode == 'home' %}
+    </section>
+  {% endif %}
+{% endif %}

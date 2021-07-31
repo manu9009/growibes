@@ -1,0 +1,41 @@
+{% if row_index == 0 %}
+	<div class=" col-lg-6 featuredNews">
+		<div class=" row">
+			<div class="col-12 col-md-6 col-lg-12 ">
+				<figure class="bg-sliver">
+					<img data-expand="-100"  data-src="{{ file_url(node.field_image.entity.field_media_image.entity.fileuri|image_style('about_us')) }}" src="{{ file_url(node.field_image.entity.field_media_image.entity.fileuri|image_style('about_us')) }}" alt="" class="lazyload w-100 ">
+				</figure>
+			</div>
+		<div class="content col-12 col-md-6 col-lg-12">
+			<small class="d-block mb-3">{{ content.field_date }}</small>
+				<a href="{{ url }}" class="h4 t-link-dark d-block fw-bold mb-3">
+				{{ label.0|length > 60 ? label.0|slice(0, 60) ~ '...' : label.0 }}
+				</a>
+				{{ content.body|render|striptags|trim }}{{ '...' }}
+			</div>
+		</div>
+	</div>
+	{% else %}
+		{% if row_index == 1 %}
+		<div class="col-lg-6 listNews">
+		{% endif %}
+		<div class="itemNews row" data-scroll="">
+			<div class="col-md-4 d-none d-md-block {{ loop.index }}">
+				<figure class="mb-0 bg-silver">
+				  	<img data-expand="-100"   data-src="{{ file_url(node.field_image.entity.field_media_image.entity.fileuri|image_style('news')) }}" src="{{ file_url(node.field_image.entity.field_media_image.entity.fileuri|image_style('news')) }}"  alt="" class="lazyload w-100">
+				</figure>
+			</div>
+			<div class="content col-md-8  ">
+				<small class="d-block mb-2">{{ content.field_date }}</small>
+				<a href="{{ url }}" class="h5 d-block fw-bold mb-3 t-link-dark">
+					{{ label.0|length > 60 ? label.0|slice(0, 60) ~ '...' : label.0 }}
+				</a>
+			    {{ content.body|render|striptags|trim }}{{ '...' }}
+			</div>
+		</div>
+		{% if row_index  == lastnews %}
+		</div>
+	{% endif %}
+{% endif %}
+
+

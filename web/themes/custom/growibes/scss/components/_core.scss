@@ -1,0 +1,457 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline:none;
+}
+
+html{
+    
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+
+    &[ lang = "en"]{
+        font-family: $ft-en ;
+        direction:ltr;
+    }
+
+ 
+}
+
+*[ data-lang = "en"]{
+    font-family: $ft-en ;
+    direction:ltr;
+}
+
+
+body{
+    background: $white;
+    font-family: $ft-en;
+    margin:0;
+    padding:0;
+   
+    &.is-open{
+        position: fixed;
+        width: 100%;
+    }
+}
+
+
+
+#app{
+    
+    height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+main{
+    // height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+    height: 100%;
+    background: $white;
+    overflow-x: hidden;
+    
+    section{
+        padding: 0 .5em;
+
+        @include lg{
+            padding:0;
+            
+        }
+    }
+}
+
+.container{
+    width:100%;
+    max-width: 1090px;
+    margin: 0 auto;
+    position: relative;
+
+    @include xl{
+        max-width: 1200px;
+    }
+
+    @include xxl{
+        max-width: 1384px;
+    }
+}
+
+header{
+    background: $purple; 
+    padding: 0 .5em;
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.3s $powereaseOut;
+
+    @include lg{
+        padding:0;   
+    }
+
+    .logo{
+        padding:1.2em 0;
+        z-index: 9;
+        transition: all 0.3s $powereaseOut 0s;
+    
+        @include lg{
+            padding:1em 0;
+            max-width: 150px;
+        }
+    
+        .main-logo{
+            height: auto;
+            width: 100%;
+            max-width: 120px;
+            transition: all 0.3s ease 0s;
+    
+            @include lg{
+                width: 100%;
+                max-width: 162px;
+            }
+        }
+    }
+    
+    &.sticky{
+        background:$purple !important;
+        opacity: 0 !important;
+        pointer-events:  none;
+
+        .logo{
+            @include lg{
+                padding:1em 0;
+            }
+
+            .main-logo{
+                 @include lg{
+                    max-width: 142px;
+                 }
+            }
+        }
+    }
+
+   
+}
+
+
+
+.inner-content{
+    section{
+        padding: 0 .5em;
+
+        @include lg{
+            padding:0;
+            
+        }
+    }
+}
+
+
+.inner-banner{
+    padding-top: 80px;
+    position: relative;
+    z-index: 4;
+
+    .title{
+        font-size: calc(10vw - 4.8px);
+        line-height: 1;
+        font-weight: bold;
+        
+       
+
+        @include md{
+            font-size:3em;
+        }
+        
+        @include xl{
+            font-size: 5.625em;
+            line-height:1;
+            letter-spacing: -.05em; 
+           
+        }
+    }
+    .section-details{
+        position: relative;
+        padding-right: 60px !important;
+    }
+    .container{
+        position: relative;
+    }
+
+    .slogan{
+        position: absolute;
+        right:0;
+        bottom:60px;
+        display: none;
+
+
+        @include lg{
+            bottom:90px;
+            display: block;
+        }
+       
+        img{
+            width: 50px;
+
+            @include lg{
+                width: auto;
+            }
+       }
+        
+    }
+
+    .graphic{
+        position: absolute;
+        z-index: 2;
+        right: -125px;
+        top:calc(50% - 125px);
+        width: 250px;
+        height: 250px;
+        opacity: .6;
+        display: none;
+
+        @include lg{
+            right: -150px;
+            top:160px;
+            width: 300px;
+            height: 300px;
+            display: block;
+        }
+    }
+}
+
+.inner-details-banner{
+    
+    position: relative;
+    
+
+    .section-details{
+        position: relative;
+    }
+    .container{
+        position: relative;
+    }
+
+    .graphic{
+        position: absolute;
+        z-index: 2;
+        right: -125px;
+        top:calc(50% - 125px);
+        width: 250px;
+        height: 250px;
+        opacity: .6;
+        display: none;
+
+        @include lg{
+            right: -150px;
+            top:160px;
+            width: 300px;
+            height: 300px;
+            display: block;
+        }
+    }
+}
+
+.inner-content{
+    position: relative;
+    overflow: hidden;
+    .graphic{
+        position: absolute;
+        z-index: 2;
+        right: -125px;
+        bottom:0;
+        width: 250px;
+        height: 250px;
+        opacity: .6;
+        display: none;
+
+        @include lg{
+            
+            right: -85px;
+            bottom:-175px;
+            width: 350px;
+            height: 350px;
+            display: block;
+        }
+    }
+}
+
+.preloader{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: $purple;
+    left: 0;
+    top: 0;
+    z-index: 99;
+
+    .preloaderWrap{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top:50%;
+        left: 50%;
+        width: 220px;
+    }
+
+    .progress{
+        width: 100%;
+        background-color: rgba($color: #fff, $alpha: .3);
+        height: 3px;
+        display: block;
+        margin:15px 0 25px;
+
+        .progressbar{
+            width: 0;
+            height: 3px;
+            display: block;
+            background-color: $white;
+        }
+        
+    }
+
+    img{
+       width: 100%;
+    }
+
+    .text{
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: .86em;
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+    }
+}
+
+
+.stickyTab{
+    position: relative;
+    background-color: $white;
+    z-index: 3;
+    margin-left: -.5em;
+    margin-right: -.5em;
+    padding: 0 .5em;
+    
+
+    @include md{
+        margin-left: 0px;
+        margin-right:  0px;
+        padding:  0px;
+    }
+
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba($silver, $alpha: .6);
+    }
+
+    
+
+    .stickyWrap{
+        height: auto;
+
+        @include lg{
+            height: 60px;
+        }
+    }
+    nav{
+        a{
+            margin-right: 35px;
+            position: relative;
+            color: rgba($Woodsmoke, .3);
+            font-weight: 500;
+            font-size: 1em;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            letter-spacing: -.02em;
+            transition: 1s all $powereaseOut;
+
+            &:hover{
+                color: $Woodsmoke;
+                text-decoration: none;
+            }
+
+            &.active{
+            color: $Woodsmoke;
+
+                &:after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $purple;
+                    opacity: 1;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+
+.c-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 11px;
+    height: 100%;
+    transform-origin: center right;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    z-index: 9;
+
+    &:hover {
+        transform: scaleX(1.45);
+    }
+
+    &:hover, .has-scroll-scrolling &, .has-scroll-dragging & {
+        opacity: 1;
+    }
+}
+
+.c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $cape;
+    opacity: 1;
+    width: 10px;
+    border-radius: 0;
+    margin: 0;
+    cursor: grab;
+
+    .has-scroll-dragging & {
+        cursor: grabbing;
+    }
+}
+
+.carousel{
+    .carousel-control-prev{
+        left:-50px;
+        width: 50px;
+        font-size: 2.5em;
+
+        @include lg{
+            left:-80px;  
+            font-size: 3em;
+        }
+    }
+
+    .carousel-control-next{
+        right: -50px;
+        width: 50px;
+        font-size: 2.5em;
+
+        @include lg{
+            right: -80px;
+            font-size: 3em;
+        }
+    }
+}

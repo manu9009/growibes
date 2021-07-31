@@ -1,0 +1,19 @@
+uuid: b04d7dde-5f23-4272-94f2-53223ce51b30
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraph_view_mode
+    - paragraphs_ee
+third_party_settings:
+  paragraphs_ee:
+    paragraphs_categories:
+      header: header
+  paragraph_view_mode:
+    enabled: false
+id: image_background
+label: 'Image Background'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

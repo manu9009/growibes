@@ -1,0 +1,36 @@
+uuid: 584b5a44-67ea-479d-9ed8-cd441be9bce9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_research.field_content_our_research
+    - paragraphs.paragraphs_type.our_research
+  module:
+    - field_layout
+    - layout_discovery
+    - paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.our_research.default
+targetEntityType: paragraph
+bundle: our_research
+mode: default
+content:
+  field_content_our_research:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

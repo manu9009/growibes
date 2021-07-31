@@ -1,0 +1,15 @@
+uuid: 8575d7e2-183b-43d6-af39-282e55931220
+langcode: en
+status: true
+dependencies: {  }
+name: slider
+label: 'Slider (1170×710)'
+effects:
+  9ecd2366-6a91-4262-a68d-cf2e78060e39:
+    uuid: 9ecd2366-6a91-4262-a68d-cf2e78060e39
+    id: image_scale
+    weight: -10
+    data:
+      width: 1170
+      height: 710
+      upscale: false

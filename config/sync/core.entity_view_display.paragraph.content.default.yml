@@ -1,0 +1,93 @@
+uuid: 11807066-490f-442e-ba5b-6c1e6890501a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content.field_column
+    - field.field.paragraph.content.field_content
+    - field.field.paragraph.content.field_image
+    - field.field.paragraph.content.field_leadtext
+    - field.field.paragraph.content.field_link
+    - field.field.paragraph.content.field_link_style
+    - field.field.paragraph.content.field_title
+    - field.field.paragraph.content.paragraph_view_mode
+    - paragraphs.paragraphs_type.content
+  module:
+    - link
+    - options
+    - paragraph_view_mode
+    - text
+id: paragraph.content.default
+targetEntityType: paragraph
+bundle: content
+mode: default
+content:
+  field_column:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_content:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_leadtext:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_link_style:
+    weight: 7
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: 5
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

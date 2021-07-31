@@ -1,0 +1,59 @@
+uuid: e6e6cce3-611e-4f0c-90fd-540e8481fa3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsroom_slider
+    - field.field.node.video.body
+    - field.field.node.video.field_category
+    - field.field.node.video.field_date
+    - field.field.node.video.field_meta_tags
+    - field.field.node.video.field_slider
+    - field.field.node.video.field_video
+    - field.field.node.video.field_video_poster
+    - node.type.video
+  module:
+    - datetime
+    - text
+    - user
+id: node.video.newsroom_slider
+targetEntityType: node
+bundle: video
+mode: newsroom_slider
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_date:
+    type: datetime_default
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: custom_date_format
+    third_party_settings: {  }
+  field_video_poster:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_mode: slider
+      link: false
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_category: true
+  field_meta_tags: true
+  field_slider: true
+  field_video: true
+  langcode: true

@@ -1,0 +1,113 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Url;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\views\Views;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Template\Attribute;
+use Drupal\Component\Utility\Unicode;
+use Drupal\file\Entity\File;
+use Drupal\block\Entity\Block;
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function growibes_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Get Request Object.
+  $request = \Drupal::request();
+
+  // If there is HTTP Exception..
+  if ($exception = $request->attributes->get('exception')) {
+    // Get the status code.
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, [401, 403, 404])) {
+      $suggestions[] = 'page__' . $status_code;
+    }
+  }
+
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function growibes_preprocess(&$variables) {
+  global $base_url;
+
+  // Replace the url with https
+  if (strpos($base_url, "https://") !== false) {
+   $base_url = str_replace("http://", "https://", $base_url);
+  }
+  $variables['base_url'] = $base_url;
+
+  $page_url = \Drupal::request()->getRequestUri();
+  $variables['current_path'] = $page_url;
+  if($page_url == "/events"  || $page_url == "/ar/events"  || $page_url == "/ar/news" || $page_url == "/ar/media" ||  $page_url == "/ar/newsroom" || $page_url == "/newsroom" || $page_url == "/about-growibes" || $page_url == "/ar/about-growibes" || $page_url == '/news' || $page_url == '/media') {
+    $variables['e_scroll_exist'] = $page_url;
+  }
+  $variables['theme_path'] = base_path() . $variables['directory'];
+  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+
+  $block = \Drupal\block\Entity\Block::load('growibes_local_tasks');
+  $variables['block_tabs'] = \Drupal::entityTypeManager()
+  ->getViewBuilder('block')
+  ->view($block);
+
+}
+
+/**
+ * Implements hook_preprocess_menu_local_task().
+ */
+function growibes_preprocess_menu_local_task(&$variables) {
+  $class = array('nav-link');
+  if($variables['element']["#active"])
+  {
+    $class[] = 'active';
+  }
+  $variables['element']['#link']['url']->setOption('attributes', array('class' => $class));
+}
+
+/**
+ * Implements template_preprocess_paragraph().
+ */
+function growibes_preprocess_paragraph(&$variables) {
+  $node = \Drupal::request()->attributes->get('node');
+  $variables['view_mode'] = $node->get('field_view_mode')->getString();
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+}
+
+function growibes_preprocess_node__view__embed_list__featured_embed_news(&$vars) {
+    $view = $vars['view'];
+    $node = $vars['node'];
+    foreach($view->result as $key => $row){
+        if($row->nid == $node->id()){
+            $vars['row_index'] = $row->index;
+        }
+    }
+    $vars['lastnews']=count($view->result);
+}
+
+
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function growibes_page_attachments_alter(array &$attachments) {
+  foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+    if ($attachment[1] == 'system_meta_generator') {
+      unset($attachments['#attached']['html_head'][$key]);
+    }
+  }
+}

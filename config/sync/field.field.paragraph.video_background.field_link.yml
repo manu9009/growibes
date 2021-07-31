@@ -1,0 +1,23 @@
+uuid: 77c72eb3-cedd-4c2c-928a-cf6ee1b29600
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.video_background
+  module:
+    - link
+id: paragraph.video_background.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: video_background
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

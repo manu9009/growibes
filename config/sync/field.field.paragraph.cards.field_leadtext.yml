@@ -1,0 +1,19 @@
+uuid: d7428cb8-829f-4832-b003-018a5b983d1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_leadtext
+    - paragraphs.paragraphs_type.cards
+id: paragraph.cards.field_leadtext
+field_name: field_leadtext
+entity_type: paragraph
+bundle: cards
+label: 'Lead Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

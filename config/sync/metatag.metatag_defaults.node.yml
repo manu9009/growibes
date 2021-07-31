@@ -1,0 +1,22 @@
+uuid: 70f51087-e48e-480e-a51f-bf7f8129af89
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Content
+tags:
+  canonical_url: '[node:url]'
+  description: '[node:summary]'
+  google: wNx6tlQSTq6vPVTlUUnvO_1UwJqHhoc0A2TOsetuWnE
+  image_src: '[site:url]themes/custom/atrc/images/share.jpg'
+  robots: 'index, follow'
+  title: '[node:title] | [site:name]'
+  og_description: 'Shaping research and development for transformative technology outcomes, we are responsible for defining Abu Dhabi’s research strategy across academia and industry, consolidating funds for efficient investment, and driving policy and regulation for agile '
+  og_image: '[site:url]themes/custom/atrc/images/share.jpg'
+  og_image_url: '[site:url]themes/custom/atrc/images/share.jpg'
+  og_site_name: '[current-domain:name]'
+  og_title: '[current-page:title] - Advanced Technology Research Council (ATRC)'
+  og_type: Article
+  og_url: '[current-page:url]'

@@ -1,0 +1,23 @@
+uuid: 3a6d2981-4860-4d29-ac40-4140797fb8b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_container
+    - paragraphs.paragraphs_type.image_background
+id: paragraph.image_background.field_container
+field_name: field_container
+entity_type: paragraph
+bundle: image_background
+label: Container
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

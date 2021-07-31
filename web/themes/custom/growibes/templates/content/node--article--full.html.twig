@@ -1,0 +1,66 @@
+<section class="inner-banner" data-scroll-section="" data-scroll-section-inview="">
+  <div class="container">
+    <div class="inner-details-banner  border-bottom">
+      <div class="row">
+        <div class="col-lg-12 col-xl-12">
+          <div class="g-padding-y p-content">
+            <div class="section-details row ">
+              <div class="col-md-2">
+                <span class="h2 d-block fc-gray fw-bold">{{'News'|t}}</span>
+              </div>
+              <div class="col-md-10">
+                <span class="h2 d-block  fw-bold ">
+                  {{ label }}
+                </span>
+                <p class="mt-4">{{ content.field_date }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ block_tabs }}
+      </div>
+    </div>
+  </div>
+  <div class="graphic speed-block" data-scroll="" data-scroll-speed="2" data-scroll-position="top" >
+    <figure class="mb-0 image" data-scroll="">
+      <img src="{{ base_url }}/{{ directory }}/images/dotted_circle.svg" alt="ATRC" class="graphic speed-block w-100">
+    </figure>
+  </div>
+</section>
+<section class="inner-content" data-scroll-section="" data-scroll-section-inview="" >
+  {% if node.field_image %}
+    <div class="container ">
+      <div class="structurePoster g-padding-y pb-0">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="image_wrapper ">
+              <figure class="bg-silver mb-0" data-scroll="" data-scroll-speed="-.5" data-scroll-position="top" >
+                <img data-src="{{ file_url(node.field_image.entity.field_media_image.entity.fileuri) }}" src="{{ file_url(node.field_image.entity.field_media_image.entity.fileuri) }}" alt="" class="w-100 lazyloaded">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  <div class="container newsContent p-content">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <article class="g-padding-y pb-0">
+          {{ content.body.0 }}
+        </article>
+      </div>
+      <div class="col-md-8">
+        <div class="g-padding-y">
+          {% if language.getId() == 'ar' or current_language == 'ar' %}
+            <a class="btn linked-black reversed" href="/ar/news">
+          {% else %}
+            <a class="btn linked-black reversed" href="/news">
+          {% endif %}
+            <span>{{ 'Back to news'|t }}</span><i><svg class="icon-svg arrow-left"><use xlink:href="#arrow-left"></use></svg></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

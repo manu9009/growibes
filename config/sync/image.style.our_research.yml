@@ -1,0 +1,17 @@
+uuid: 398e9f22-7ccf-4d7f-8ae2-9677260622ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: our_research
+label: 'Our Research'
+effects:
+  fbef89b7-f715-4b77-a619-071e39ac5546:
+    uuid: fbef89b7-f715-4b77-a619-071e39ac5546
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 430
+      height: 525
+      crop_type: focal_point

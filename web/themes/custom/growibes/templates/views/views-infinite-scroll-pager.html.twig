@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * The views infinite scroll pager template.
+ */
+#}
+
+{% if items.next %}
+<div class="col-md-12 pb-5">
+<div class=" d-flex pager__item ">
+<ul{{ attributes }}>
+  <li class="pager__item">
+    <a class="button btn linked-loadmore mx-auto d-flex justify-content-between " href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next"><span>{{ options.button_text }}</span><i><svg class="icon-svg arrow-down"><use xlink:href="#arrow-down"></use></svg></i></a>
+  </li>
+</ul>
+</div>
+</div>
+{% endif %}

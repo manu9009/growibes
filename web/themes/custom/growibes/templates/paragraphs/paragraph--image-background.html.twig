@@ -1,0 +1,17 @@
+{% if paragraph.field_bg_image %}
+  <section class="inner-content" data-scroll-section="" data-scroll-section-inview="">
+    <div class="container ">
+      <div class="structurePoster g-padding-y  border-bottom">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="image_wrapper">
+              <figure class="bg-silver" data-scroll="" data-scroll-speed="-.5" data-scroll-position="top" >
+                <img data-src="{{ file_url(paragraph.field_bg_image.entity.field_media_image.entity.fileuri) }}" src="{{ file_url(paragraph.field_bg_image.entity.field_media_image.entity.fileuri) }}" alt="" class="w-100">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}

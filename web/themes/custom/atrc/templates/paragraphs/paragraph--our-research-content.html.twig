@@ -1,0 +1,9 @@
+
+{% set image = paragraph.field_image.entity.field_media_image.entity.fileuri|image_style('our_research') %}
+<div class="content-img">
+    <img class="w-100 lazyload" src="{{ image }}" alt="">
+</div>
+
+<div class="content-text">
+    <span class="d-block fc-white fw-bold h4">{{ content.field_title }}</span>
+</div>

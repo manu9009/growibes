@@ -1,0 +1,61 @@
+uuid: 055deba8-df55-419d-8a46-55e8a3079115
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_slider
+    - paragraphs.paragraphs_type.content_slider
+    - paragraphs.paragraphs_type.slider
+  module:
+    - entity_reference_revisions
+id: paragraph.slider.field_content_slider
+field_name: field_content_slider
+entity_type: paragraph
+bundle: slider
+label: 'Content Slider'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      content_slider: content_slider
+    target_bundles_drag_drop:
+      card:
+        weight: 13
+        enabled: false
+      cards:
+        weight: 14
+        enabled: false
+      content:
+        weight: 15
+        enabled: false
+      content_slider:
+        enabled: true
+        weight: 16
+      embed_view:
+        weight: 17
+        enabled: false
+      image_background:
+        weight: 18
+        enabled: false
+      list:
+        weight: 19
+        enabled: false
+      lists:
+        weight: 20
+        enabled: false
+      slider:
+        weight: 12
+        enabled: false
+      text_circle_images:
+        weight: 21
+        enabled: false
+      video_background:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

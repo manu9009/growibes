@@ -1,0 +1,10 @@
+uuid: c85e66b9-4911-452c-9db2-06bb365fd4a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.footer
+label: Footer
+targetEntityType: node
+cache: true

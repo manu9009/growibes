@@ -1,0 +1,28 @@
+name: Growibes Theme
+type: theme
+description: 'Growibes Custom Theme'
+version: VERSION
+core: 8.x
+core_version_requirement: ^8 || ^9
+base theme: false
+
+libraries:
+  - growibes/global-styling
+
+libraries-override:
+  #bootstrap_barrio/global-styling: false
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  highlighted: Highlighted
+  featured_top: 'Featured top'
+  title: Title
+  tabs: Tabs
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  social_share: 'Social Share'

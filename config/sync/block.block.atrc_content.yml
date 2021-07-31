@@ -1,0 +1,22 @@
+uuid: e027fd66-c9c8-4994-b0fb-1d5acdddd3a2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - atrc
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: atrc_content
+theme: atrc
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

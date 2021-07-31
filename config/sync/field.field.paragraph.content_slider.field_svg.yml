@@ -1,0 +1,29 @@
+uuid: e67053a5-a923-4768-9225-9686a1ac9f36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_svg
+    - paragraphs.paragraphs_type.content_slider
+    - taxonomy.vocabulary.svg
+id: paragraph.content_slider.field_svg
+field_name: field_svg
+entity_type: paragraph
+bundle: content_slider
+label: SVG
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      svg: svg
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

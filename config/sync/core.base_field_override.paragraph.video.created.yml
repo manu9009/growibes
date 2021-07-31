@@ -1,0 +1,18 @@
+uuid: 75835d2c-1d88-41ba-8b48-a355c5072605
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.video
+id: paragraph.video.created
+field_name: created
+entity_type: paragraph
+bundle: video
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

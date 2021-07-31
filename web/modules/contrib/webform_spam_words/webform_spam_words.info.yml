@@ -1,0 +1,13 @@
+name: Webform Spam Words
+description: 'Provides the ability to block spam words for webform fields.'
+package: 'Webform'
+type: module
+core_version_requirement: ^8.8 || ^9
+
+dependencies:
+  - 'webform:webform'
+
+# Information added by Drupal.org packaging script on 2021-04-09
+version: '1.0.1'
+project: 'webform_spam_words'
+datestamp: 1617981430

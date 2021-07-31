@@ -1,0 +1,47 @@
+uuid: 2221f7e7-9ca2-469b-8751-9cf2ed77050e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_slider.field_svg
+    - field.field.paragraph.content_slider.field_title
+    - paragraphs.paragraphs_type.content_slider
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.content_slider.default
+targetEntityType: paragraph
+bundle: content_slider
+mode: default
+content:
+  field_svg:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

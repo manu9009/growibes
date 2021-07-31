@@ -1,0 +1,8 @@
+uuid: a4fee034-e739-4c7b-a82b-2aa5a18baedc
+langcode: en
+status: true
+dependencies: {  }
+name: SVG
+vid: svg
+description: ''
+weight: 0

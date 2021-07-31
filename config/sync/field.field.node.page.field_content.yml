@@ -1,0 +1,92 @@
+uuid: 53b2ec6c-588a-46df-b9bb-8238e7debeea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.page
+    - paragraphs.paragraphs_type.board_member
+    - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.content
+    - paragraphs.paragraphs_type.embed_view
+    - paragraphs.paragraphs_type.lists
+    - paragraphs.paragraphs_type.our_research
+    - paragraphs.paragraphs_type.slider
+    - paragraphs.paragraphs_type.text_circle_images
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: node.page.field_content
+field_name: field_content
+entity_type: node
+bundle: page
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      content: content
+      lists: lists
+      cards: cards
+      embed_view: embed_view
+      text_circle_images: text_circle_images
+      slider: slider
+      video: video
+      board_member: board_member
+      our_research: our_research
+    target_bundles_drag_drop:
+      board_member:
+        enabled: true
+        weight: 15
+      card:
+        weight: -19
+        enabled: false
+      cards:
+        enabled: true
+        weight: -16
+      content:
+        enabled: true
+        weight: -18
+      content_slider:
+        weight: 16
+        enabled: false
+      embed_view:
+        enabled: true
+        weight: -15
+      image_background:
+        weight: -12
+        enabled: false
+      list:
+        weight: -13
+        enabled: false
+      lists:
+        enabled: true
+        weight: -17
+      member:
+        weight: 24
+        enabled: false
+      our_research:
+        enabled: true
+        weight: 17
+      our_research_content:
+        weight: 28
+        enabled: false
+      slider:
+        enabled: true
+        weight: 12
+      text_circle_images:
+        enabled: true
+        weight: -14
+      video:
+        enabled: true
+        weight: 13
+      video_background:
+        weight: -11
+        enabled: false
+field_type: entity_reference_revisions

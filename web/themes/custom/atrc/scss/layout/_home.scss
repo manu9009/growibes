@@ -1,0 +1,533 @@
+.home{
+    header{
+        background: transparent;
+    }
+
+    .banner{
+        background-color: #000;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        @include md{
+            height: 655px;
+        }
+
+        .container{
+            z-index: 2;
+            position: relative;
+            
+        }
+
+        .bannerContent{
+            padding:180px 0;
+
+            @include md{
+                padding: 0;
+            }
+
+            
+
+             
+
+            .title{
+                color: $white;
+                font-size: calc(10vw - 4.8px);
+                line-height: 0;
+    
+                @include md{
+                    font-size:3em;
+                }
+              
+                @include xl{
+                    font-size: 5.625em;
+                    line-height:1;
+                    letter-spacing: -.03em;   
+                }
+            }
+    
+            .slogan{
+                font-size: 1.175em;
+                color: $white;
+                display: none !important;
+    
+    
+                @include md{
+                    font-size: 1.1  75em;
+                    display: block !important;
+                    margin-bottom: 0em;
+                }
+                
+                @include lg{
+                    font-size: 1.375em;
+                    margin-bottom: .5em;
+                    
+                }
+            }
+    
+            .btn{
+                position: absolute;
+                bottom: -3.5em;
+            }
+        }
+
+        
+
+        .graphic{
+            position: absolute;
+            z-index: 2;
+            right: -125px;
+            top:calc(50% - 125px);
+            width: 250px;
+            height: 250px;
+            opacity: .6;
+
+            @include lg{
+                right: -192px;
+                top:calc(50% - 192px);
+                width: 385px;
+                height: 385px;
+            }
+        }
+
+        .vimeo-container {
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: absolute;
+            margin-top: -10px;
+            left: 0;
+            top:0;
+            background:#000;
+            background-size: cover;
+            background-position: center;
+
+            &:before{
+                background: rgba($color: #000000, $alpha: 0.55);
+                content: "";
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                top:0;
+                left: 0;
+                display: block;
+            }
+          }
+          
+          iframe {
+            box-sizing: border-box;
+            width: 177.77777778vh;
+            height: 56.25vw;
+            min-width: 100%;
+            min-height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+        // .backgroundImage{
+        //     position: absolute;
+        //     left: 0;
+        //     height: 100%;
+        //     width: 100%;
+        //     top:0;
+        //     background-size: cover;
+        //     z-index: 0;
+    
+        //     &:before{
+        //         background: rgba($color: #000000, $alpha: 0.66);
+        //         content: "";
+        //         position: absolute;
+        //         z-index: 1;
+        //         width: 100%;
+        //         height: 100%;
+        //         top:0;
+        //         left: 0;
+        //         display: block;
+        //     }
+        // }
+    }
+
+    .homeAbout{
+        position: relative;
+        overflow: hidden;
+        padding-left: .5em;
+        padding-right: .5em;
+        
+        @include lg{
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .container{
+            position: relative;
+        }
+
+        .image_wrapper{
+            border-radius: 50%;
+            overflow: hidden;
+
+            &.small{
+                width: 33.3%;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+
+
+            figure{
+                margin-bottom: 0px;
+                overflow: unset;
+
+                img{
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        .graphic{
+            position: absolute;
+            z-index: -1;
+            right:-125px;
+            top:calc(100% - 4em);
+            width: 250px;
+            height: 250px;
+            opacity: .5;
+            display: none;
+            
+            @include lg{
+                left: 0;
+                top:calc(100% - 4em);
+                width: 385px;
+                height: 385px;
+                display: block;
+            }
+
+           
+        }
+    }
+
+    .communityHome{
+
+        .h3{
+
+            br{
+                display: none;
+
+                @include lg{
+                    display: block;
+                }
+            }
+        }
+
+  
+        .graphic{
+            position: absolute;
+            z-index: 2;
+            right: -125px;
+            top:4.25em;
+            width: 250px;
+            height: 250px;
+            opacity: .5;
+
+            @include lg{
+                right: -192px;
+                width: 385px;
+                height: 385px;
+            }
+
+        }
+
+        .contentBlockWrap{
+            > div{
+                .contentBlock{
+                    border:1px solid rgba($color: #fff, $alpha: .5);
+                } 
+                
+                &:nth-of-type(2){
+                    .contentBlock{
+                        border-left:1px solid rgba($color: #fff, $alpha: .25);
+                        border-right:1px solid rgba($color: #fff, $alpha: .25);
+                    } 
+                }
+
+                &:last-of-type{
+                    .contentBlock{
+                        border-left:1px solid rgba($color: #fff, $alpha: .25);
+                    } 
+                }
+
+                &:first-of-type{
+                    .contentBlock{
+                       
+                        border-right:1px solid rgba($color: #fff, $alpha: .25);
+                    } 
+                }
+            }
+        }
+
+        
+
+
+        
+    }
+
+  
+    .pillarsHome{
+        position: relative;
+
+        .title{
+            margin-bottom: 1.5rem;
+
+            @include md{
+                margin-bottom: 0px;
+            }
+        }
+
+        .graphic{
+            position: absolute;
+            z-index: 2;
+            left: -125px;
+            top:125px;
+            width: 250px;
+            height: 250px;
+            opacity: .5;
+            display: none;
+            
+            @include lg{
+                left: -192px;
+                top:192px;
+                width: 385px;
+                height: 385px;
+                display: block;
+            }
+        }
+
+
+       
+        
+
+        .pillarWrap{
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1);
+
+                &.is-inview{
+                    transform: none;
+                    opacity: 1;
+                }
+
+                &:first-child{
+                    transition-delay: .1s;     
+                }
+                &:nth-child(2){
+                    transition-delay: .2s;     
+                }
+        }
+
+        
+    }
+
+    .newsHome{
+        position: relative;
+        overflow: hidden;
+
+        .newContent{
+            margin-bottom: 40px;
+
+            @include md{
+                margin-bottom: 54px;
+            }
+            
+            figure{
+                overflow: hidden;
+            }
+
+            .content{
+                
+
+                small{
+                    color: rgba($Woodsmoke, $alpha: 0.6);
+                }
+            }
+
+            .featuredNews{
+                margin-bottom: 1.6em;
+
+                @include md{
+                    margin-bottom: 2.3em;
+                }
+
+                @include lg{
+                    margin-bottom: 0em;
+                }
+
+                figure{
+                    background-color: $white;
+                }
+                .content{
+                    
+                    @include md{
+                        padding-right: 2em;
+                    }
+                }
+            }
+
+            .listNews{
+                
+                .itemNews{
+                    margin-bottom: 40px;
+                    opacity: 0;
+                    transform: translateY(60px);
+                    transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1);
+                    
+                    @include md{
+                        margin-bottom: 70px;
+                    }
+                        &.is-inview{
+                            transform: none;
+                            opacity: 1;
+                        }
+        
+                        &:first-child{
+                            transition-delay: .1s;     
+                        }
+                        &:nth-child(2){
+                            transition-delay: .2s;     
+                        }
+                }
+
+                .content{
+
+                    small{
+                        border-top:1px solid rgba($color: #000000, $alpha: 0.1);
+                        padding-top: 1em;
+
+                        @include md{
+                            padding-top: 1.5em;
+                        }
+                    }
+
+                    p{
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+
+        .graphic{
+            position: absolute;
+            z-index: 2;
+            right: -125px;
+            top:-125px;
+            width: 250px;
+            height: 250px;
+            opacity: .5;
+
+            @include md{
+                width: 385px;
+                height: 385px;
+                right: -192px;
+                top:-192px;
+            }
+        }
+
+    }
+
+    
+
+
+
+}
+
+
+.researchHome{
+    position: relative;
+
+    .graphic{
+        position: absolute;
+        z-index: 2;
+        right: -125px;
+        top:4.25em;
+        width: 250px;
+        height: 250px;
+        opacity: .5;
+
+        @include lg{
+            right: -192px;
+            width: 385px;
+            height: 385px;
+        }
+
+    }
+
+}
+
+
+.reachOutHome{
+    position: relative;
+    background-color: $Woodsmoke;
+    overflow: hidden;
+    padding: 0 .5em;
+
+    @include md{
+        padding: 3em .5em;
+    }
+
+    .title{
+        br{
+            display: none;
+
+            @include lg{
+                display: block;
+            }
+        }
+    }
+
+    .graphic{
+        position: absolute;
+        z-index: 2;
+        right: -200px;
+        bottom:-200px;
+        width: 400px;
+        height: 400px;
+        opacity: .2;
+
+        @include md{
+            right: -250px;
+            bottom:-350px;
+            width: 700px;
+            height: 700px;
+        }
+    }
+
+    .container{
+        z-index: 1;
+        position: relative;
+
+        article{
+            p{
+                color: $white;
+            }
+        }
+    }
+
+    .backgroundImage{
+        filter: grayscale(100%);
+        position: absolute;
+        height: calc(100% + 5.125em);
+        width: 100%;
+        left: 0;
+        top:-2.25em;
+        background-size: cover;
+        background-position: top center;
+        z-index: 0;
+        pointer-events: none;
+        opacity: .1;
+    }
+
+
+}
